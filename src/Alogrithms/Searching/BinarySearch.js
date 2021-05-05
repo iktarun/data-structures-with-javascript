@@ -3,7 +3,6 @@ function BinarySearchMethod1(arr, l, r, item) {
     let mid = parseInt(l + (r - l) / 2);
     console.log("mid is:", mid);
     if (arr[mid] === item) {
-      console.log("Item found");
       return mid;
     }
 
