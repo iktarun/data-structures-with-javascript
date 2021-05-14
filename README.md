@@ -13,5 +13,6 @@ This project is being developed to implement Data structure using Javascript
 
     - GCD of 2 numbers
     - LCM of 2 numbers
+    - Rotate array
 
 # Analysis of Algorithms
