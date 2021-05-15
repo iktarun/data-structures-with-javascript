@@ -15,4 +15,10 @@ This project is being developed to implement Data structure using Javascript
     - LCM of 2 numbers
     - Rotate array
 
+## 14-05-2021
+
+    - Minimum steps to make product equal to one https://www.youtube.com/watch?v=mPPNFyBNyJY
+    - Remove given element
+    - Search Insert Position in a sorted array
+
 # Analysis of Algorithms
