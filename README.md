@@ -21,4 +21,7 @@ This project is being developed to implement Data structure using Javascript
     - Remove given element
     - Search Insert Position in a sorted array
 
-# Analysis of Algorithms
+## 15-05-2021
+
+    - Selection sort
+    - Bubble Sort
