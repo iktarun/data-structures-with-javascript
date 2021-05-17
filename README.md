@@ -25,3 +25,7 @@ This project is being developed to implement Data structure using Javascript
 
     - Selection sort
     - Bubble Sort
+
+## 16-05-2021
+
+    - Insertion Sort
