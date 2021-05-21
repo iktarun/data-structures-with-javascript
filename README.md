@@ -29,3 +29,16 @@ This project is being developed to implement Data structure using Javascript
 ## 16-05-2021
 
     - Insertion Sort
+
+## 17-05-2021
+
+    - SortedSquares
+
+## 18-05-2021
+
+- Divide and Conquer
+- Merge Sort
+
+## 20-05-2021
+
+    - Leetcode 1122, Relative sorting in array
