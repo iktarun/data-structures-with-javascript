@@ -42,3 +42,26 @@ This project is being developed to implement Data structure using Javascript
 ## 20-05-2021
 
     - Leetcode 1122, Relative sorting in array
+
+## 23-05-2021
+
+    - 1351. Count Negative Numbers in a Sorted Matrix
+    -
+
+## 26-05-2021
+
+    -  1512. Number of Good Pairs
+    -
+
+## 26-05-2021
+
+    - 1365. How Many Numbers Are Smaller Than the Current Number
+
+## 27-05-2021
+
+    -  706. Design HashMap
+
+## 31-05-2021
+
+    - Rotate Matrix
+    - Spiral Print of the matrix
