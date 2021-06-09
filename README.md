@@ -65,3 +65,24 @@ This project is being developed to implement Data structure using Javascript
 
     - Rotate Matrix
     - Spiral Print of the matrix
+    - Multiply 2 matrix
+
+## 01-06-2021
+
+    - Diagonal Traverse of Matrix
+    - Print Matrix in Diagonal pattern
+
+## 03-06-2021
+
+    - Search in a matrix
+    - Unique rows in boolean matrix
+
+## 03-06-2021
+
+    - Tranpose of a matrix
+
+## 07-06-2021
+
+    - Length of last word in a string
+    - 709. To Lower Case
+    - 14. Longest Common Prefix

@@ -50,4 +50,42 @@ var isAnagram = function (s, t) {
   return true;
 };
 
-console.log(isAnagram("rat", "cat"));
+var isAnagramMethod2 = function (s, t) {
+  if (s.length !== t.length) {
+    return false;
+  }
+
+  /* Method 1 */
+  let res = s.charCodeAt(0) ^ t.charCodeAt(0);
+
+  for (let i = 1; i < s.length; i++) {
+    res = res ^ s.charCodeAt(i) ^ t.charCodeAt(i);
+  }
+
+  if (res === 0) {
+    console.log("String are anagram");
+  } else {
+    console.log("Not an anagram");
+  }
+
+  /*Method2
+  let res = new Array(26).fill(0);
+  for (let i = 0; i < 26; i++) {
+    let charCode = s.charCodeAt(i);
+    if (charCode) {
+      res[charCode - 97]++;
+    }
+
+    let charCodeTarget = t.charCodeAt(i);
+    if (charCodeTarget) {
+      res[charCodeTarget - 97]--;
+    }
+    if(res[charCodeTarget - 97] < 0){
+      break;
+    }
+  }
+  */
+  console.log(res);
+};
+
+console.log(isAnagramMethod2("abba", "abba"));

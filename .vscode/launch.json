@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\src\\Arrays\\707-DesignHashMap.js"
+      "program": "${workspaceFolder}\\src\\DataStructures\\Strings\\CompressString.js"
     }
   ]
 }
