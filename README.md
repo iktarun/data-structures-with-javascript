@@ -86,3 +86,13 @@ This project is being developed to implement Data structure using Javascript
     - Length of last word in a string
     - 709. To Lower Case
     - 14. Longest Common Prefix
+
+## 09-06-2021
+
+    - Non Repeating Character(GFG)
+    - Debouncing and Throttling in JS
+
+## 10-06-2021
+
+    - 13. Roman to Integer(https://www.youtube.com/watch?v=dlATMslQ6Uc )
+    - 12. Integer to Roman https://www.youtube.com/watch?v=JyLrPSJNfYw
