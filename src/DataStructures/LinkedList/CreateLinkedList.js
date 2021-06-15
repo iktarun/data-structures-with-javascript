@@ -162,6 +162,11 @@ LinkedList.prototype.print = function () {
   }
 };
 
+LinkedList.prototype.deleteList = function () {
+  console.log("Deleting the entire linked list");
+  this.head = null;
+};
+
 const obj = new LinkedList();
 obj.insertAtBeginning(1);
 obj.insertAtBeginning(2);
@@ -171,4 +176,6 @@ obj.insertAtEnd(5);
 obj.insertAt(6, 2);
 obj.deleteFirstNode();
 obj.deleteLastNode();
+obj.print();
+obj.deleteList();
 obj.print();
