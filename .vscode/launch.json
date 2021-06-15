@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\src\\DataStructures\\Strings\\CompressString.js"
+      "program": "${workspaceFolder}\\src\\DataStructures\\Strings\\PermutationOfAString.js"
     }
   ]
 }

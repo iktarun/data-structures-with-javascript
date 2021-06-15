@@ -96,3 +96,18 @@ This project is being developed to implement Data structure using Javascript
 
     - 13. Roman to Integer(https://www.youtube.com/watch?v=dlATMslQ6Uc )
     - 12. Integer to Roman https://www.youtube.com/watch?v=JyLrPSJNfYw
+
+## 11-06-2021
+
+    - Longest Distinct characters in string(GFG)TODO::
+
+## 12-06-2021
+
+- Permuation of a given string(GFG)
+
+- Till now we have solved easy problems of string, we will come to hard problem after learning algorithms
+
+## 14-06-2021
+
+- Create a Linked List
+  (https://codeburst.io/linked-lists-in-javascript-es6-code-part-1-6dd349c3dcc3)
