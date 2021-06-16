@@ -167,15 +167,113 @@ LinkedList.prototype.deleteList = function () {
   this.head = null;
 };
 
+// Insert data in a SORTED LINKED LIST
+LinkedList.prototype.sortedInsert = function (data) {
+  // case1: If list is empty
+  if (!this.head) {
+    let node = new Node(data);
+    this.head = node;
+    return this.head;
+  }
+
+  let current = null;
+  let tail = this.head;
+  while (tail && tail.data < data) {
+    current = tail;
+    tail = tail.next;
+  }
+  let node = new Node(data);
+
+  // If we are going to insert at the first position
+  if (current === null) {
+    node.next = this.head;
+    this.head = node;
+    return this.head;
+  }
+  // If we are going to insert at the middle or last position
+  node.next = current.next;
+  current.next = node;
+};
+
+LinkedList.prototype.removeDuplicatesFromSortedList = function () {
+  if (!this.head) {
+    return null;
+  }
+
+  let current = this.head;
+
+  while (current != null) {
+    if (current.next && current.data === current.next.data) {
+      let tempPtr = current.next;
+      while (tempPtr && tempPtr.data === current.data) {
+        tempPtr = tempPtr.next;
+      }
+      current.next = tempPtr;
+      continue;
+    }
+    current = current.next;
+  }
+};
+/*
+Reverse a given linked list
+ */
+LinkedList.prototype.RevereseLinkedList = function () {
+  let next = null;
+  let current = this.head;
+  let prev = null;
+
+  while (current != null) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  this.head = prev;
+  return this.head;
+};
+
 const obj = new LinkedList();
-obj.insertAtBeginning(1);
-obj.insertAtBeginning(2);
-obj.insertAtBeginning(3);
-obj.insertAtBeginning(4);
-obj.insertAtEnd(5);
-obj.insertAt(6, 2);
-obj.deleteFirstNode();
-obj.deleteLastNode();
+// obj.insertAtBeginning(1);
+// obj.insertAtBeginning(2);
+// obj.insertAtBeginning(3);
+// obj.insertAtBeginning(4);
+// obj.insertAtEnd(5);
+// obj.insertAt(6, 2);
+// obj.deleteFirstNode();
+// obj.deleteLastNode();
+// obj.print();
+// obj.deleteList();
+// obj.sortedInsert(4);
+// obj.sortedInsert(3);
+// obj.sortedInsert(1);
+// obj.sortedInsert(5);
+// obj.sortedInsert(2);
+// obj.sortedInsert(2);
+
+/* remove duplices section
+  obj.sortedInsert(4);
+  obj.sortedInsert(3);
+  obj.sortedInsert(1);
+  obj.sortedInsert(2);
+  obj.sortedInsert(2);
+  obj.sortedInsert(2);
+  console.log("Before Deletion");
+  obj.print();
+  obj.removeDuplicatesFromSortedList();
+  console.log("After removing duplicates");
+  obj.print();
+*/
+
+/*
+  Reverse a Linked List */
+obj.sortedInsert(4);
+obj.sortedInsert(3);
+obj.sortedInsert(1);
+obj.sortedInsert(2);
+console.log("Before reversing a linked list");
 obj.print();
-obj.deleteList();
+obj.RevereseLinkedList();
+console.log("After reversing a linked list");
 obj.print();
+
+// obj.print();

@@ -111,3 +111,7 @@ This project is being developed to implement Data structure using Javascript
 
 - Create a Linked List
   (https://codeburst.io/linked-lists-in-javascript-es6-code-part-1-6dd349c3dcc3)
+
+  ## 15-06-2021
+
+- Recursive display of a linked list
