@@ -232,6 +232,51 @@ LinkedList.prototype.RevereseLinkedList = function () {
   return this.head;
 };
 
+/*
+Reverse a given linked list using recursion
+ */
+LinkedList.prototype.revereseLinkedListUsingRecursion = function (q, p) {
+  if (p) {
+    this.revereseLinkedListUsingRecursion(p, p.next);
+    p.next = q;
+  } else {
+    this.head = q;
+  }
+};
+/**
+ * Detect a loop in a linked list
+ * Method1: Using Set or we can call it hashmap
+ * Method2: Using a flag by changing the data-structure of a list
+ * Method3: Using  Floyd’s Cycle-Finding Algorithm
+ */
+LinkedList.prototype.detectLoopInLinkedList = function () {
+  function countNoOfNodesInLoop(ptr) {
+    let count = 1;
+    let node = ptr;
+    while (node.next != ptr) {
+      node = node.next;
+      count++;
+    }
+    return count;
+  }
+
+  let slwPtr = this.head;
+  let fastPtr = this.head;
+
+  while (slwPtr && fastPtr && fastPtr.next) {
+    slwPtr = slwPtr.next;
+    fastPtr = fastPtr.next.next;
+    if (slwPtr === fastPtr) {
+      let count = countNoOfNodesInLoop(slwPtr);
+      console.log("Loop detected, No Of Nodes in loop is:", count);
+      return 1;
+    }
+  }
+
+  console.log("No Loop detected in the linked list");
+  return 0;
+};
+
 const obj = new LinkedList();
 // obj.insertAtBeginning(1);
 // obj.insertAtBeginning(2);
@@ -265,15 +310,30 @@ const obj = new LinkedList();
 */
 
 /*
-  Reverse a Linked List */
+  Reverse a Linked List
 obj.sortedInsert(4);
 obj.sortedInsert(3);
 obj.sortedInsert(1);
 obj.sortedInsert(2);
 console.log("Before reversing a linked list");
 obj.print();
-obj.RevereseLinkedList();
+// obj.RevereseLinkedList();
+obj.revereseLinkedListUsingRecursion(null, obj.head);
 console.log("After reversing a linked list");
 obj.print();
+ */
+
+/**
+ * Detect a loop in linked list call
+ */
+
+obj.sortedInsert(4);
+obj.sortedInsert(3);
+obj.sortedInsert(1);
+obj.sortedInsert(2);
+obj.sortedInsert(5);
+obj.sortedInsert(6);
+obj.head.next.next.next = obj.head;
+obj.detectLoopInLinkedList();
 
 // obj.print();

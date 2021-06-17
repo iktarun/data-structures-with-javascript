@@ -109,9 +109,20 @@ This project is being developed to implement Data structure using Javascript
 
 ## 14-06-2021
 
-- Create a Linked List
+- Create a Linked List and operations on linked list. must read article
   (https://codeburst.io/linked-lists-in-javascript-es6-code-part-1-6dd349c3dcc3)
 
   ## 15-06-2021
 
 - Recursive display of a linked list
+
+  ## 16-06-2021
+
+- Reverse a Linked List
+- Concating 2 linked list
+- Detect loop in a linked list
+- Count no of nodes inside loop in a linked list
+
+  ## 17-06-2021
+
+  - Merging 2 sorted linked list into a single sorted list(TODO)
