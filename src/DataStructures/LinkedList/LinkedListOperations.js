@@ -277,6 +277,69 @@ LinkedList.prototype.detectLoopInLinkedList = function () {
   return 0;
 };
 
+LinkedList.prototype.mergeTwoSortedLinkedList = function (
+  firstList,
+  secondList
+) {
+  let thirdList = null;
+  let lastNode = null;
+
+  let firstListPtr = firstList.head;
+  let secondListPtr = secondList.head;
+  while (firstListPtr != null && secondListPtr != null) {
+    if (firstListPtr.data < secondListPtr.data) {
+      if (thirdList == null) {
+        thirdList = firstListPtr;
+        lastNode = firstListPtr;
+        firstListPtr = firstListPtr.next;
+        lastNode.next = null;
+        continue;
+      }
+      lastNode.next = firstListPtr;
+      lastNode = firstListPtr;
+      firstListPtr = firstListPtr.next;
+      lastNode.next = null;
+    } else {
+      if (thirdList == null) {
+        thirdList = secondListPtr;
+        lastNode = secondListPtr;
+        secondListPtr = secondListPtr.next;
+        lastNode.next = null;
+        continue;
+      }
+      lastNode.next = secondListPtr;
+      lastNode = secondListPtr;
+      secondListPtr = secondListPtr.next;
+      lastNode.next = null;
+    }
+  }
+
+  // Copy the remaining elements
+  if (firstListPtr != null) {
+    while (firstListPtr != null) {
+      lastNode.next = firstListPtr;
+      lastNode = firstListPtr;
+      firstListPtr = firstListPtr.next;
+      lastNode.next = null;
+    }
+  }
+
+  if (secondListPtr != null) {
+    while (secondListPtr != null) {
+      lastNode.next = secondListPtr;
+      lastNode = secondListPtr;
+      secondListPtr = secondListPtr.next;
+      lastNode.next = null;
+    }
+  }
+
+  // Print the list
+  while (thirdList != null) {
+    console.log(thirdList.data);
+    thirdList = thirdList.next;
+  }
+};
+
 const obj = new LinkedList();
 // obj.insertAtBeginning(1);
 // obj.insertAtBeginning(2);
@@ -325,8 +388,6 @@ obj.print();
 
 /**
  * Detect a loop in linked list call
- */
-
 obj.sortedInsert(4);
 obj.sortedInsert(3);
 obj.sortedInsert(1);
@@ -335,5 +396,30 @@ obj.sortedInsert(5);
 obj.sortedInsert(6);
 obj.head.next.next.next = obj.head;
 obj.detectLoopInLinkedList();
+ */
+/**
+ * Merge two sorted linked List
+ */
+const list1 = new LinkedList();
+list1.sortedInsert(2);
+list1.sortedInsert(8);
+list1.sortedInsert(10);
+list1.sortedInsert(15);
+list1.sortedInsert(20);
+list1.sortedInsert(25);
+
+const list2 = new LinkedList();
+list2.sortedInsert(4);
+list2.sortedInsert(7);
+list2.sortedInsert(12);
+list2.sortedInsert(15);
+
+// Print before mergeing
+console.log("List1");
+obj.print.call(list1);
+console.log("List2");
+obj.print.call(list2);
+console.log("After merge-----");
+obj.mergeTwoSortedLinkedList(list1, list2);
 
 // obj.print();
