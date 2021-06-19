@@ -12,6 +12,35 @@ class LinkedList {
   }
 }
 /**
+ * Display a Linked List
+ */
+LinkedList.prototype.print = function () {
+    let head = this.head;
+    let current = this.head;
+  
+    if (head != null) {
+      do {
+        console.log(current.data);
+        current = current.next;
+      } while (current != head);
+    }
+  };
+  
+  /**
+   * Display a Linked List using recursion
+   */
+  
+  LinkedList.prototype.printUsingRecursion = function (current) {
+    if (this.head != null) {
+        if (current !== this.head || this.flag === 0) {
+        console.log(current.data);
+        this.flag = 1;
+        this.printUsingRecursion(current.next);
+        }
+        this.flag = 0;
+    }
+  };
+/**
  * Insert at the end of circular linked list
  */
 LinkedList.prototype.insertAtEnd = function (data) {
@@ -66,52 +95,42 @@ LinkedList.prototype.deleteAtGivenPosition = function (position) {
       return -1;
     }
   
-    if (position === 1 && this.head === this.head) {
-      let data = this.head.data;
-      this.head = null;
-      console.log("data deleted", data);
-      return data;
-    }
-  
+    // If we are removing from postion1
+    // NOTES: Also need to make a check whether position should be less that nodes count, otherwise it will give
+    //the wrong result
+   if(position == 1){
     let current = this.head;
-    for (let i = 1; i < position; i++) {
-      current = current.next;
+    while(current.next != this.head){
+        current = current.next;
     }
-    let data = current.next.data;
-    console.log("data deleted is:",data);
-    current.next = current.next.next;
-    delete current;
-    return data;
+
+    // If current is head node, or only one node is there
+    if(current === this.head){
+        console.log("delete node at position", position,"is", current);
+        delete current;
+        this.head = null;
+    }else{
+        let data = this.head.data;
+        console.log("delete node at position", position,"is", current.next);
+        current.next = this.head.next;
+        let tempNode =  this.head;
+        delete tempNode;
+        this.head = current.next;
+        return data;
+    }
+   }else{
+       let current = this.head;
+        for(let i=1; i < position - 1; i++){
+            current = current.next;
+        }
+        
+        let tempNode = current.next;
+        current.next = tempNode.next;
+        console.log("delete node at position", position,"is", tempNode);
+        delete tempNode;
+
+   }
   };
-
-/**
- * Display a Linked List
- */
-
-LinkedList.prototype.print = function () {
-  let head = this.head;
-  let current = this.head;
-
-  if (head != null) {
-    do {
-      console.log(current.data);
-      current = current.next;
-    } while (current != head);
-  }
-};
-
-/**
- * Display a Linked List using recursion
- */
-
-LinkedList.prototype.printUsingRecursion = function (current) {
-  if (current !== this.head || this.flag === 0) {
-    console.log(current.data);
-    this.flag = 1;
-    this.printUsingRecursion(current.next);
-  }
-  this.flag = 0;
-};
 
 let list = new LinkedList();
 // list.insertAtEnd(4);
@@ -120,8 +139,11 @@ let list = new LinkedList();
 // list.insertAtEnd(2);
 
 list.insertAtBeginning(4);
-list.insertAtBeginning(3);
-list.insertAtBeginning(1);
-list.insertAtBeginning(2);
-console.log("Printing List-----");
+// list.insertAtBeginning(3);
+// list.insertAtBeginning(1);
+// list.insertAtBeginning(2);
+console.log("Before Deletion Printing List-----");
+list.printUsingRecursion(list.head);
+list.deleteAtGivenPosition(1);
+console.log("After Deletion Printing List-----");
 list.printUsingRecursion(list.head);

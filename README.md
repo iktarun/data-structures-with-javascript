@@ -129,4 +129,4 @@ This project is being developed to implement Data structure using Javascript
 
   ## 17-06-2021
 
-  - Circular Linked List operations
+  - Circular Linked List operations like Insertion, Deletion, Print, Reverse etc

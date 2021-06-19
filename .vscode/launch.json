@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\src\\DataStructures\\LinkedList\\LinkedListOperations.js"
+      "program": "${workspaceFolder}\\src\\DataStructures\\LinkedList\\CircularLinkedList.js"
     }
   ]
 }
