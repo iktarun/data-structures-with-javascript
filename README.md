@@ -125,8 +125,8 @@ This project is being developed to implement Data structure using Javascript
 
   ## 17-06-2021
 
-  - Merging 2 sorted linked list into a single sorted list
+- Merging 2 sorted linked list into a single sorted list
 
   ## 17-06-2021
 
-  - Circular Linked List operations like Insertion, Deletion, Print, Reverse etc
+- Circular Linked List operations like Insertion, Deletion, Print, Reverse etc.
