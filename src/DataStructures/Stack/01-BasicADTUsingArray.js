@@ -35,6 +35,9 @@ Stack.prototype.pop = function () {
 };
 
 Stack.prototype.peek = function (position) {
+  if (this.top === -1 || this.top - position < 0) {
+    return "Not a valid position";
+  }
   return this.stack[position];
 };
 
