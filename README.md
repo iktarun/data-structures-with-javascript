@@ -135,4 +135,8 @@ This project is being developed to implement Data structure using Javascript
 
 # Stack Implementation
 
-- Basic stack operastions
+- Basic stack operastions using Arrays
+
+  ## 26-06-2021
+
+  - Basic stack operastions using Linnked List
