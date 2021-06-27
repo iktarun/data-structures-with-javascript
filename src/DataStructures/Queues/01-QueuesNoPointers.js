@@ -28,7 +28,7 @@ function Queue() {
     },
     printQueue() {
       return queue;
-    }
+    },
   };
 }
 
@@ -39,7 +39,7 @@ q.enqueue(9);
 q.enqueue(10);
 console.log("Print queue before DeQueue");
 console.log(q.printQueue());
-console.log("DeQueue");
-q.dequeue();
+console.log("DeQueue", q.dequeue());
+
 console.log("Print queue After DeQueue");
 console.log(q.printQueue());
