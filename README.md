@@ -139,4 +139,8 @@ This project is being developed to implement Data structure using Javascript
 
   ## 26-06-2021
 
-  - Basic stack operastions using Linnked List
+  - Basic stack operations using Linnked List
+
+    ## 27-06-2021
+
+- Basic QUEUES operations using Arrays, and circular array

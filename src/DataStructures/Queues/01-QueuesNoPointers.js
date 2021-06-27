@@ -1,5 +1,6 @@
 /**
  * Queues DS
+ * Problem with this approach is we are removing element from front, which makes it shift all the elements to 1 position next
  */
 
 function Queue() {

@@ -1,5 +1,6 @@
 /**
  * Queue implementation using arrays
+ * Problem with this approach is some places will remain unused after deleting from list, so we need circular queue
  */
 
 class Queue {
