@@ -144,3 +144,8 @@ This project is being developed to implement Data structure using Javascript
     ## 27-06-2021
 
 - Basic QUEUES operations using Arrays, and circular array
+
+  ## 29-06-2021
+
+  - Stack using QUEUES(TODO imeplementation)
+  - QUEUE using Stack

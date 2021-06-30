@@ -30,7 +30,7 @@ Stack.prototype.pop = function () {
   this.stack = this.stack.splice(0, this.top--);
   //   OR
   //   let item = this.stack[this.top--];
-  //   this.stack.length--;
+  //    this.stack.length =  this.stack.length !== 0 ? --this.stack.length: 0;
   return item;
 };
 
