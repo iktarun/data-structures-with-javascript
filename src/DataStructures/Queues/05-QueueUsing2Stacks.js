@@ -6,11 +6,9 @@ class Stack {
 
   push(item) {
     // Make a condition check in here, If it is exceding the stack size then return
-
     let top = ++this.top;
-
     this.stack[top] = item;
-    console.log("PUSHEDL", top, item, this.stack.length);
+    console.log("PUSHED:", top, item, this.stack.length);
   }
 
   pop(stack2) {

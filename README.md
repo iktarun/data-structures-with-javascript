@@ -149,3 +149,7 @@ This project is being developed to implement Data structure using Javascript
 
   - Stack using QUEUES(TODO imeplementation)
   - QUEUE using Stack
+
+  ## 30-06-2021
+
+- Next Greater Element
