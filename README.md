@@ -153,3 +153,8 @@ This project is being developed to implement Data structure using Javascript
   ## 30-06-2021
 
 - Next Greater Element
+
+  ## 03-07-2021
+
+- The Celebrity Problem
+- Stock Spain problem
