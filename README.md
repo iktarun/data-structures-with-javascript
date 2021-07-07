@@ -166,3 +166,7 @@ This project is being developed to implement Data structure using Javascript
 
   - Iterative Tree Traversal
   - Level Order Traversal
+
+## 07-07-2021
+
+- Binary Search Tree

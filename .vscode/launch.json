@@ -10,7 +10,8 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       // "program": "${workspaceFolder}\\src\\DataStructures\\LinkedList\\LinkedListOperations.js"
-      "program": "${workspaceFolder}\\src\\BasicsJSConcepts\\StaticVariables.js"
+      "program": "${workspaceFolder}\\src\\DataStructures\\Tree\\02-BinarySearchTree.js"
+      // "program": "${workspaceFolder}\\src\\BasicsJSConcepts\\StaticVariables.js"
     }
   ]
 }
