@@ -159,4 +159,10 @@ This project is being developed to implement Data structure using Javascript
 - The Celebrity Problem
 - Stock Spain problem
 
+  - Tree Traversal using Binary Tree
+  - Recursive Tree Traversal
+
   ## 05-07-2021
+
+  - Iterative Tree Traversal
+  - Level Order Traversal

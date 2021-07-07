@@ -79,6 +79,118 @@ class Node {
       }
     }
   }
+  levelOrderTraversal(ptr) {
+    if (ptr === null) {
+      return;
+    }
+    let Queue = [];
+    let front = -1;
+    let rear = -1;
+    console.log(ptr.data);
+    Queue[++rear] = ptr;
+    front++;
+    while (front <= rear) {
+      ptr = Queue[front++];
+      if (ptr.left) {
+        console.log(ptr.left.data);
+        Queue[++rear] = ptr.left;
+      }
+      if (ptr.right) {
+        console.log(ptr.right.data);
+        Queue[++rear] = ptr.right;
+      }
+    }
+  }
+
+  countNoOfNodes(ptr) {
+    let x, y;
+
+    if (ptr !== null) {
+      x = this.countNoOfNodes(ptr.left);
+      y = this.countNoOfNodes(ptr.right);
+      /* Below commented code is for...count Nodes with degree 2
+      // if(ptr.left && ptr.right){
+      //   return x + y + 1;
+      // }else{
+      //   return x + y;
+      // } */
+      /**
+       * Get sum of all the nodes
+       * return x + y + ptr.data;
+       */
+
+      return x + y + 1;
+    }
+    return 0;
+  }
+  heightOfTree(ptr) {
+    let x, y;
+
+    if (ptr !== null) {
+      x = this.heightOfTree(ptr.left);
+      y = this.heightOfTree(ptr.right);
+      if (x > y) {
+        return x + 1;
+      } else {
+        return y + 1;
+      }
+    }
+    return 0;
+  }
+
+  countNoOfLeafNodes(ptr) {
+    let x, y;
+
+    if (ptr !== null) {
+      x = this.countNoOfLeafNodes(ptr.left);
+      y = this.countNoOfLeafNodes(ptr.right);
+
+      if (ptr.left === null && ptr.right === null) {
+        return x + y + 1;
+      } else {
+        return x + y;
+      }
+    }
+    return 0;
+  }
+  countNoOfNodesWithDegreeTwo(ptr) {
+    let x, y;
+
+    if (ptr !== null) {
+      x = this.countNoOfNodesWithDegreeTwo(ptr.left);
+      y = this.countNoOfNodesWithDegreeTwo(ptr.right);
+
+      if (ptr.left !== null && ptr.right !== null) {
+        return x + y + 1;
+      } else {
+        return x + y;
+      }
+    }
+    return 0;
+  }
+
+  countNoOfNodesWithDegreeOne(ptr) {
+    let x, y;
+
+    if (ptr !== null) {
+      x = this.countNoOfNodesWithDegreeOne(ptr.left);
+      y = this.countNoOfNodesWithDegreeOne(ptr.right);
+
+      /**
+       *  if (
+        (ptr.left !== null ^ ptr.right !== null)
+       */
+      if (
+        (ptr.left !== null && ptr.right === null) ||
+        (ptr.left === null && ptr.right !== null)
+      ) {
+        return x + y + 1;
+      } else {
+        return x + y;
+      }
+    }
+    return 0;
+  }
 }
 
 let root = new Node(1);
@@ -86,6 +198,8 @@ root.left = new Node(2);
 root.right = new Node(3);
 root.left.left = new Node(4);
 root.left.right = new Node(5);
+root.right.left = new Node(6);
+root.right.right = new Node(7);
 
 // Recursive methods
 // console.log("PRE-ORDER TRAVERSAL");
@@ -104,5 +218,23 @@ root.left.right = new Node(5);
 // console.log("IN-ORDER TRAVERSAL ITERATIVE");
 // root.iterativeInOrderTraversal(root);
 
-console.log("POST-ORDER TRAVERSAL ITERATIVE");
-root.iterativePostOrderTraversal(root);
+// console.log("POST-ORDER TRAVERSAL ITERATIVE");
+// root.iterativePostOrderTraversal(root);
+
+// console.log("LEVEL-ORDER TRAVERSAL ITERATIVE");
+// root.levelOrderTraversal(root);
+
+// console.log("COUNT NO OF NODES, RECURSIVELY");
+// console.log(root.countNoOfNodes(root));
+
+// console.log("HEIGHT OF BINARY TREE, RECURSIVELY");
+// console.log(root.heightOfTree(root));
+
+// console.log("COUNT NO OF LEAF NODES, RECURSIVELY");
+// console.log(root.countNoOfLeafNodes(root));
+
+// console.log("COUNT NO OF NODES WITH DEGREE 2, RECURSIVELY");
+// console.log(root.countNoOfNodesWithDegreeTwo(root));
+
+console.log("COUNT NO OF NODES WITH DEGREE 1, RECURSIVELY");
+console.log(root.countNoOfNodesWithDegreeOne(root));
