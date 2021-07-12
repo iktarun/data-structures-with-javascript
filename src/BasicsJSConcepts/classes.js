@@ -1,3 +1,19 @@
+// Example 1
+class CoolGuy {
+  specialTrick = "";
+  CoolGuy(trick) {
+    console.log("hello");
+    specialTrick = trick;
+  }
+  showOff() {
+    console.log("Here's my trick: ", this.specialTrick);
+  }
+}
+
+let Joe = new CoolGuy("jumping rope");
+debugger;
+Joe.showOff(); // Here's my trick: jumping rope
+
 let alert = console.log;
 /**
  * Function proptyping which is equal to classes
@@ -22,8 +38,8 @@ let alert = console.log;
 
 // var a = new Foo();
 // a.foo();
-// Bar. = Object.create(Foo.prototype);
-// var b = prototypenew Bar();
+// Bar.prototype = Object.create(Foo.prototype);
+// var b = new Bar();
 // b.foo();
 
 // b.foo.call(a);

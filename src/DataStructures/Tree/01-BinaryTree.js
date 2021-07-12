@@ -191,6 +191,24 @@ class Node {
     }
     return 0;
   }
+  hasPathSum(root, target, sum = 0) {
+    //code here
+
+    if (root === null) {
+      return false;
+    }
+
+    sum = sum + root.data;
+
+    if (sum === target && root.left === null && root.left === null) {
+      return true;
+    }
+
+    return (
+      this.hasPathSum(root.left, target, sum) ||
+      this.hasPathSum(root.right, target, sum)
+    );
+  }
 }
 
 let root = new Node(1);
@@ -236,5 +254,9 @@ root.right.right = new Node(7);
 // console.log("COUNT NO OF NODES WITH DEGREE 2, RECURSIVELY");
 // console.log(root.countNoOfNodesWithDegreeTwo(root));
 
-console.log("COUNT NO OF NODES WITH DEGREE 1, RECURSIVELY");
-console.log(root.countNoOfNodesWithDegreeOne(root));
+// console.log("COUNT NO OF NODES WITH DEGREE 1, RECURSIVELY");
+// console.log(root.countNoOfNodesWithDegreeOne(root));
+console.log(
+  "Given a binary tree and an integer S, check whether there is root to leaf path with its sum as S."
+);
+console.log(root.hasPathSum(root, 8, 0));
