@@ -209,6 +209,41 @@ class Node {
       this.hasPathSum(root.right, target, sum)
     );
   }
+
+  leftView(root) {
+    //your code here
+
+    let number = [];
+
+    function leftTraversal(node) {
+      let Queue = [];
+      let front = 0;
+      let rear = 0;
+      Queue[rear] = node;
+      while (front <= rear) {
+        let n = rear - front + 1;
+
+        for (let i = 1; i <= n; i++) {
+          let tempNode = Queue[front++];
+
+          if (i === 1) {
+            number.push(tempNode.data);
+          }
+
+          if (tempNode.left) {
+            Queue[++rear] = tempNode.left;
+          }
+
+          if (tempNode.right) {
+            Queue[++rear] = tempNode.right;
+          }
+        }
+      }
+    }
+
+    leftTraversal(root);
+    return number;
+  }
 }
 
 let root = new Node(1);
@@ -256,7 +291,10 @@ root.right.right = new Node(7);
 
 // console.log("COUNT NO OF NODES WITH DEGREE 1, RECURSIVELY");
 // console.log(root.countNoOfNodesWithDegreeOne(root));
-console.log(
-  "Given a binary tree and an integer S, check whether there is root to leaf path with its sum as S."
-);
-console.log(root.hasPathSum(root, 8, 0));
+// console.log(
+//   "Given a binary tree and an integer S, check whether there is root to leaf path with its sum as S."
+// );
+// console.log(root.hasPathSum(root, 8, 0));
+
+console.log("Left View of Binary Tree");
+console.log(root.leftView(root));
