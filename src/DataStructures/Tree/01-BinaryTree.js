@@ -244,15 +244,61 @@ class Node {
     leftTraversal(root);
     return number;
   }
+  findMax(root) {
+    let max = 0;
+
+    function getMaxElement(node, max) {
+      let x, y;
+      if (node) {
+        x = getMaxElement(node.left, max);
+        y = getMaxElement(node.right, max);
+        max = Math.max(x, y, node.data);
+        return max;
+      }
+      return 0;
+    }
+
+    max = getMaxElement(root, 0);
+    return max;
+  }
+  findMin(root) {
+    let min = root.data;
+
+    function getMinElement(node, min) {
+      let x, y;
+      if (node) {
+        if (node.left) {
+          x = getMinElement(node.left, min);
+          min = Math.min(x, node.data);
+        }
+
+        if (node.right) {
+          y = getMinElement(node.right, min);
+          min = Math.min(y, node.data);
+        }
+
+        return Math.min(min, node.data);
+      }
+      return min;
+    }
+
+    min = getMinElement(root, root.data);
+    return min;
+  }
 }
 
-let root = new Node(1);
+let root = new Node(5);
 root.left = new Node(2);
 root.right = new Node(3);
-root.left.left = new Node(4);
-root.left.right = new Node(5);
-root.right.left = new Node(6);
-root.right.right = new Node(7);
+root.right.left = new Node(7);
+// root.right.left.right = new Node(1);
+// root.left.left = new Node(4);
+// root.left.right = new Node(5);
+// root.right.left = new Node(6);
+// root.right.right = new Node(7);
+
+//Find the max element in the Tree
+console.log(root.findMin(root));
 
 // Recursive methods
 // console.log("PRE-ORDER TRAVERSAL");
@@ -296,5 +342,5 @@ root.right.right = new Node(7);
 // );
 // console.log(root.hasPathSum(root, 8, 0));
 
-console.log("Left View of Binary Tree");
-console.log(root.leftView(root));
+// console.log("Left View of Binary Tree");
+// console.log(root.leftView(root));
