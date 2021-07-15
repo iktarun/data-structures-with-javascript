@@ -83,6 +83,36 @@ class Node {
     }
     return;
   }
+
+  //Function to check whether a Binary Tree is BST or not.
+  isBST(root) {
+    //your code here
+    if (!root) {
+      return true;
+    }
+
+    if (
+      this.checkForBST(root.left, 0, root.data) &&
+      this.checkForBST(root.right, root.data, 100000)
+    ) {
+      return true;
+    }
+
+    return false;
+  }
+  checkForBST(node, min, max) {
+    if (!node) {
+      return true;
+    }
+    if (node.data > min && node.data < max) {
+      return (
+        this.checkForBST(node.left, min, node.data) &&
+        this.checkForBST(node.right, node.data, max)
+      );
+    }
+
+    return false;
+  }
 }
 
 let root = new Node(30);
@@ -92,8 +122,10 @@ root.insertIterativeApproach(root, 10);
 root.insertIterativeApproach(root, 25);
 root.insertIterativeApproach(root, 35);
 root.insertIterativeApproach(root, 50);
-root.levelOrderTraversal(root);
-console.log(root.right.right);
+root.left.left.left = new Node(30);
+console.log(root.isBST(root));
+// root.levelOrderTraversal(root);
+// console.log(root.right.right);
 // root.left = new Node(20);
 // root.right = new Node(40);
 // root.left.left = new Node(10);
