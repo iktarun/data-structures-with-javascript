@@ -10,8 +10,9 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       // "program": "${workspaceFolder}\\src\\DataStructures\\LinkedList\\LinkedListOperations.js"
-      "program": "${workspaceFolder}\\src\\DataStructures\\Tree\\01-BinaryTree.js"
-      // "program": "${workspaceFolder}\\src\\BasicsJSConcepts\\CallPollyfill.js"
+      //"program": "${workspaceFolder}\\src\\DataStructures\\Tree\\01-BinaryTree.js"
+      "program": "${workspaceFolder}\\src\\BasicsJSConcepts\\DeepCloning.js"
+      // "program": "${workspaceFolder}\\src\\DesignPatterns\\2-PrototypeDesignPattern.js"
     }
   ]
 }
