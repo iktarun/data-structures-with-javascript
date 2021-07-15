@@ -285,20 +285,62 @@ class Node {
     min = getMinElement(root, root.data);
     return min;
   }
+  //Function to store the zig zag order traversal of tree in a list.
+  zigZagTraversal(root) {
+    let Queue = [];
+    let front = 0,
+      rear = 0;
+
+    Queue[rear] = root;
+    let tempArr = [];
+    let leftToRight = true;
+    while (front <= rear) {
+      let n = rear - front + 1;
+      tempArr = [];
+      //printing section
+      for (let i = 1; i <= n; i++) {
+        let node = Queue[front++];
+        tempArr.push(node);
+        console.log(node.data);
+      }
+
+      // Pushing back in the Queue
+
+      for (let i = tempArr.length - 1; i >= 0; i--) {
+        if (leftToRight) {
+          if (tempArr[i].right) {
+            Queue[++rear] = tempArr[i].right;
+          }
+          if (tempArr[i].left) {
+            Queue[++rear] = tempArr[i].left;
+          }
+        } else {
+          if (tempArr[i].left) {
+            Queue[++rear] = tempArr[i].left;
+          }
+          if (tempArr[i].right) {
+            Queue[++rear] = tempArr[i].right;
+          }
+        }
+      }
+
+      leftToRight = !leftToRight;
+    }
+  }
 }
 
-let root = new Node(5);
+let root = new Node(1);
 root.left = new Node(2);
 root.right = new Node(3);
-root.right.left = new Node(7);
-// root.right.left.right = new Node(1);
-// root.left.left = new Node(4);
-// root.left.right = new Node(5);
-// root.right.left = new Node(6);
-// root.right.right = new Node(7);
+root.left.left = new Node(4);
+root.left.right = new Node(5);
+root.right.left = new Node(6);
+root.right.left.left = new Node(8);
+root.right.right = new Node(7);
+root.right.right.right = new Node(9);
 
 //Find the max element in the Tree
-console.log(root.findMin(root));
+console.log(root.zigZagTraversal(root));
 
 // Recursive methods
 // console.log("PRE-ORDER TRAVERSAL");
