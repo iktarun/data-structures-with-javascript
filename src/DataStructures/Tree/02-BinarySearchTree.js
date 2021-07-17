@@ -113,17 +113,54 @@ class Node {
 
     return false;
   }
+  noSibling(root) {
+    //code here Print all nodes that don't have sibling
+    let number = [];
+
+    function checkForSiblings(node, number) {
+      if (node) {
+        if ((node.left === null) ^ (node.right === null)) {
+          if (node.left) {
+            number.push(node.left.data);
+          } else {
+            number.push(node.right.data);
+          }
+        }
+
+        checkForSiblings(node.left, number);
+        checkForSiblings(node.right, number);
+      }
+    }
+
+    if ((root.left === null) ^ (root.right === null)) {
+      if (root.left) {
+        number.push(root.left.data);
+      } else {
+        number.push(root.right.data);
+      }
+    }
+
+    checkForSiblings(root.left, number);
+    checkForSiblings(root.right, number);
+    if (number.length === 0) {
+      return number.push(-1);
+    }
+    return number;
+  }
 }
 
 let root = new Node(30);
-root.insertIterativeApproach(root, 20);
-root.insertIterativeApproach(root, 40);
-root.insertIterativeApproach(root, 10);
-root.insertIterativeApproach(root, 25);
-root.insertIterativeApproach(root, 35);
-root.insertIterativeApproach(root, 50);
-root.left.left.left = new Node(30);
-console.log(root.isBST(root));
+// root.insertIterativeApproach(root, 20);
+// root.insertIterativeApproach(root, 40);
+// root.insertIterativeApproach(root, 10);
+// root.insertIterativeApproach(root, 25);
+// root.insertIterativeApproach(root, 35);
+// root.insertIterativeApproach(root, 50);
+root.right = new Node(40);
+root.left = new Node(20);
+root.right.right = new Node(50);
+root.left.left = new Node(10);
+console.log(root.noSibling(root));
 // root.levelOrderTraversal(root);
 // console.log(root.right.right);
 // root.left = new Node(20);
