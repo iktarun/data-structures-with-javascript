@@ -327,6 +327,28 @@ class Node {
       leftToRight = !leftToRight;
     }
   }
+
+  //Function to return the lowest common ancestor in a Binary Tree.
+  lowestCommonAncestor(root, n1, n2) {
+    //your code here
+    if (!root) {
+      return null;
+    }
+    if (root === n1 || root === n2) {
+      return root;
+    }
+
+    let l = this.lowestCommonAncestor(root.left, n1, n2);
+    let r = this.lowestCommonAncestor(root.right, n1, n2);
+    if (l && r) {
+      return root;
+    }
+    if (l) {
+      return l;
+    } else {
+      return r;
+    }
+  }
 }
 
 let root = new Node(1);
@@ -340,7 +362,9 @@ root.right.right = new Node(7);
 root.right.right.right = new Node(9);
 
 //Find the max element in the Tree
-console.log(root.zigZagTraversal(root));
+console.log(
+  root.lowestCommonAncestor(root, root.left.left, root.right.right.right)
+);
 
 // Recursive methods
 // console.log("PRE-ORDER TRAVERSAL");
