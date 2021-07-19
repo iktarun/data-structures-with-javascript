@@ -1,6 +1,62 @@
 "use strict";
 
 /**
+ * Syntax flat(depth)
+ * Array.prototype.flat(depth)
+ * version 0.0.0
+ * Feature	        Chrome  Firefox Internet Explorer   Opera	Safari	Edge
+ * Basic support    No      No      No                  No    No      No
+ * -------------------------------------------------------------------------------
+ */
+
+if (!Array.prototype.myFlat) {
+  Object.defineProperty(Array.prototype, "myFlat", {
+    writable: true,
+    enumerable: false,
+    configurable: true,
+    value: function () {
+      //without depth
+      if (this === null) {
+        throw new TypeError(
+          "Array.prototype.myEvery " + "called on null or undefined"
+        );
+      }
+
+      if (Object.prototype.toString.call(this) !== "[object Array]") {
+        throw new TypeError("Array.prototype.myFlat " + "should be an array!");
+      }
+      let stack = [...this];
+      let result = [];
+      while (stack.length) {
+        const next = stack.pop();
+        if (Array.isArray(next)) {
+          stack.push(...next);
+        } else {
+          result.push(next);
+        }
+      }
+      // reverse to restore input order
+      return result.reverse();
+    },
+  });
+}
+const arr = [1, 2, [3, 4, [5, 6]]];
+console.log(arr.myFlat());
+
+/**
+ * Array.prototype.isArray()
+ * version 0.0.0
+ * Feature	        Chrome  Firefox Internet Explorer   Opera	Safari	Edge
+ * Basic support	  5    	  4       9    	              10.5	5       (Yes)
+ * -------------------------------------------------------------------------------
+ */
+if (!Array.isArray) {
+  Array.isArray = function (arg) {
+    return Object.prototype.toString.call(arg) === "[object Array]";
+  };
+}
+
+/**
  * Syntax every(function callbackFn(element, index, array) { ... }, thisArg)
  * Array.prototype.every()
  * version 0.0.0
@@ -178,8 +234,14 @@ if (!Array.prototype.myFilter) {
       }
       let result = [];
       for (let i = 0; i < this.length; i++) {
-        if (callback.call(context, this[i], i, this)) {
-          result.push(this[i]);
+        if (context) {
+          if (callback.call(context, this[i], i, this)) {
+            result.push(this[i]);
+          }
+        } else {
+          if (callback(this[i], i, this)) {
+            result.push(this[i]);
+          }
         }
       }
       return result;
@@ -187,11 +249,11 @@ if (!Array.prototype.myFilter) {
   });
 }
 
-const isBelowThreshold = (currentValue) => currentValue >= 1;
+// const isBelowThreshold = (currentValue) => currentValue > 20;
 
-const array1 = [1, 30, 39, 29, 10, 13];
+// const array1 = [1, 30, 39, 29, 10, 13];
 
-console.log(array1.myEvery(isBelowThreshold));
+// console.log(array1.myFilter(isBelowThreshold));
 
 /**  Utility code section to test forEach, filter, map 
  * let arr = [1, 2, 3];
