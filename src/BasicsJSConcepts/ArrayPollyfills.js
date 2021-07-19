@@ -1,5 +1,47 @@
 "use strict";
 
+/**
+ * Syntax every(function callbackFn(element, index, array) { ... }, thisArg)
+ * Array.prototype.every()
+ * version 0.0.0
+ * Feature	        Chrome  Firefox Internet Explorer   Opera	Safari	Edge
+ * Basic support    No      No      No                  No    No      No
+ * -------------------------------------------------------------------------------
+ */
+
+if (!Array.prototype.myEvery) {
+  Object.defineProperty(Array.prototype, "myEvery", {
+    writable: true,
+    enumerable: false,
+    configurable: true,
+    value: function (callback, context) {
+      //context = thisArg
+      if (this === null) {
+        throw new TypeError(
+          "Array.prototype.myEvery " + "called on null or undefined"
+        );
+      }
+      if (typeof callback !== "function") {
+        throw new TypeError(callback + " is not a function");
+      }
+
+      let arr = this;
+      let result;
+      for (let i = 0; i < arr.length; i++) {
+        if (context) {
+          result = callback.call(context, arr[i], i, arr);
+        } else {
+          result = callback(arr[i], i, arr);
+        }
+        if (!result) {
+          return false;
+        }
+      }
+      return true;
+    },
+  });
+}
+
 /*
 The first time the callback is called, accumulator and currentValue can be one of two values. 
 If initialValue is provided in the call to reduce(), then accumulator will be equal to initialValue, 
@@ -144,6 +186,12 @@ if (!Array.prototype.myFilter) {
     },
   });
 }
+
+const isBelowThreshold = (currentValue) => currentValue >= 1;
+
+const array1 = [1, 30, 39, 29, 10, 13];
+
+console.log(array1.myEvery(isBelowThreshold));
 
 /**  Utility code section to test forEach, filter, map 
  * let arr = [1, 2, 3];
