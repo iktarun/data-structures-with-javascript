@@ -181,6 +181,25 @@ class Node {
 
     // return list;
   }
+  getCountLieInGivenRange(root, low, high) {
+    // Count BST nodes that lie in a given range
+    let count = 0;
+    function getCount(node, low, high, count) {
+      if (!node) {
+        return count;
+      }
+      count = getCount(node.left, low, high, count);
+      if (node.data > low && node.data < high) {
+        count++;
+      }
+      count = getCount(node.right, low, high, count);
+
+      return count;
+    }
+
+    count = getCount(root, low, high, count);
+    return count;
+  }
 }
 
 let root = new Node(30);
@@ -194,7 +213,7 @@ root.right = new Node(40);
 root.left = new Node(20);
 root.right.right = new Node(50);
 root.left.left = new Node(10);
-console.log(root.isPairPresentWithGivenTarget(root, 70));
+console.log(root.getCountLieInGivenRange(root, 5, 45));
 // root.levelOrderTraversal(root);
 // console.log(root.right.right);
 // root.left = new Node(20);
