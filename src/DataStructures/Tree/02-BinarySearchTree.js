@@ -147,6 +147,40 @@ class Node {
     }
     return number;
   }
+  isPairPresentWithGivenTarget(root, target) {
+    //code here,
+
+    let list = [];
+    let result = [];
+    this.treeToList(root, list);
+    let start = 0;
+    let end = list.length - 1;
+    while (start < end) {
+      if (list[start] + list[end] === target) {
+        result.push(list[start]);
+        result.push(list[end]);
+        return result;
+      } else if (list[start] + list[end] < target) {
+        start++;
+      } else {
+        end--;
+      }
+    }
+
+    return result;
+  }
+
+  treeToList(root, list) {
+    // Base Case... INORDER BST gives the sorted list
+    // if (root === null) return list;
+    if (root) {
+      this.treeToList(root.left, list);
+      list.push(root.data);
+      this.treeToList(root.right, list);
+    }
+
+    // return list;
+  }
 }
 
 let root = new Node(30);
@@ -160,7 +194,7 @@ root.right = new Node(40);
 root.left = new Node(20);
 root.right.right = new Node(50);
 root.left.left = new Node(10);
-console.log(root.noSibling(root));
+console.log(root.isPairPresentWithGivenTarget(root, 70));
 // root.levelOrderTraversal(root);
 // console.log(root.right.right);
 // root.left = new Node(20);
