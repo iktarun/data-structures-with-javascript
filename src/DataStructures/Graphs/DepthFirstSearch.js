@@ -1,22 +1,14 @@
-function BFS(vtx, A, n) {
-  let Q = [];
-  let visited = new Map();
-
-  // Initial
-  console.log(vtx); // Visit vertex
-  visited.set(vtx, true);
-  Q.push(vtx);
-
+let visited = new Map();
+function DFS(u, A, n) {
   // Explore
-  while (Q.length > 0) {
-    let u = Q.shift(); // Vertex u for exploring
-    for (let v = 1; v <= n; v++) {
+  if (visited.has(u) === false) {
+    console.log(u); // Visit vertex
+    visited.set(u, true);
+    for (let v = 1; v < n; v++) {
       // Adjacent vertices of vertex u
       if (A[u][v] == 1 && visited.has(v) === false) {
         // Adjacent vertex and not visited
-        console.log(v); // Visit vertex
-        visited.set(v, true);
-        Q.push(v);
+        DFS(v, A, n);
       }
     }
   }
@@ -35,4 +27,4 @@ let A = [
 ];
 // Please note:: Iam not using column and row 0 to make the program simpler
 console.log("Vertex: 1 -> ");
-BFS(1, A, 8);
+DFS(7, A, 8);
