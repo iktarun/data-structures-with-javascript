@@ -1,4 +1,4 @@
-// This method will only work, if the arr1 or arr2 will be having unique elements
+// NOTE:: We have an edge case,  where if individual array will contain the duplicate
 //Method2 with hashing,simple approach
 function doUnionMethod1(a, m, b, n) {
   /* NOTE::: These 2 lines will help to get the result for any input

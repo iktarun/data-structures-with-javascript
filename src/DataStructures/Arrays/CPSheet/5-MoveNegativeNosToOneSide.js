@@ -21,7 +21,7 @@ function modeNegativeNosToOneSide(arr, n) {
 
   return arr;
 }
-
+// Method 2
 function rearrange(arr, n) {
   let j = 0;
   for (let i = 0; i < n; i++) {
