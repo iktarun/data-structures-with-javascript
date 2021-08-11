@@ -76,7 +76,7 @@ function moreThanNdK(arr, n, k) {
     }
 
     // If actual count is more than n/k,
-    // then prlet it
+    // then print it
     if (ac > n / k) {
       console.log("Number:", temp[i].e, " Count:", ac);
     }
