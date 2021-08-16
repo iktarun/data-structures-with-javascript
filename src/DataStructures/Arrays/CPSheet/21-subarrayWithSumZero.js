@@ -4,6 +4,8 @@
 //Function to check whether there is a subarray present with 0-sum or not.
 // Time: O(n)
 // Space: O(n)
+// If we add something in a number it should increase, but after adding no
+// if same no comes again it means subarray in making 0
 function subArrayExists(arr, n) {
   // code here
   let s = 0;
