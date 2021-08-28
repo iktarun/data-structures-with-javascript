@@ -9,10 +9,11 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\src\\DataStructures\\CPSheet\\BitManipulation\\440-FindTwoNonRepeatedElements.js"
       // "program": "${workspaceFolder}\\src\\DataStructures\\LinkedList\\LinkedListOperations.js"
       //"program": "${workspaceFolder}\\src\\DataStructures\\Tree\\02-BinarySearchTree.js"
       // "program": "${workspaceFolder}\\src\\DataStructures\\Graphs\\DepthFirstSearch.js"
-      "program": "${workspaceFolder}\\src\\BasicsJSConcepts\\promises.js"
+      // "program": "${workspaceFolder}\\src\\BasicsJSConcepts\\promises.js"
       // "program": "${workspaceFolder}\\src\\DesignPatterns\\2-PrototypeDesignPattern.js"
     }
   ]
