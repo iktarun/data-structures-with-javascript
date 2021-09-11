@@ -10,7 +10,7 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       // "program": "${workspaceFolder}\\src\\DataStructures\\CPSheet\\BitManipulation\\440-FindTwoNonRepeatedElements.js"
-      "program": "${workspaceFolder}\\src\\DataStructures\\CPSheet\\Strings\\64-RabinKarpAlgorithm.js"
+      "program": "${workspaceFolder}\\src\\DataStructures\\CPSheet\\Strings\\56-SubsequencesOfString.js"
       // "program": "${workspaceFolder}\\src\\DataStructures\\LinkedList\\LinkedListOperations.js"
       //"program": "${workspaceFolder}\\src\\DataStructures\\Tree\\02-BinarySearchTree.js"
       // "program": "${workspaceFolder}\\src\\DataStructures\\Graphs\\DepthFirstSearch.js"
