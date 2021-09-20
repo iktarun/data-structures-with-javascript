@@ -22,6 +22,24 @@ var maxProfit = function (prices) {
     }
     return max_profit;
     */
+
+  /**
+     * You don't actually need to calculate minimum if you start iteration from the end.
+    Just keep track of the maximum number of the right sub array at the point of iteration
+
+    var maxProfit = function(prices) {
+        let max = 0;
+        let ans = 0;
+        for(let i=prices.length - 1; i>=0; i--) {
+
+            ans = Math.max(ans,  max - prices[i]);
+            if(prices[i] > max) {
+                max = prices[i]
+            }
+        }
+        return ans;
+    };
+     */
 };
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4]));
