@@ -1,13 +1,15 @@
 // Example for Timeout or callback
 function foo1() {
-  setTimeout(() => {
+  setTimeout(function () {
+    console.log(this);
     // `this` here is lexically inherited from `foo1()`
     console.log(this.a);
-  }, 100);
+  }, 3000);
 }
 var obj = {
   a: 2,
 };
+// var a = "2";
 foo1.call(obj); // 2
 
 /**
@@ -61,16 +63,16 @@ function foo(something) {
 var obj = {
   a: 1,
 };
-// foo.Mybind(obj, 2, { c: 3 });
+foo.Mybind(obj, 2, { c: 3 }); //();
 // simple `bind` helper
-// Array.prototype.Mybind = function (fn, obj) {
-//   return function () {
-//     return fn.apply(obj, arguments);
-//   };
-// };
-// var obj = {
-//   a: 2,
-// };
+Array.prototype.Mybind = function (fn, obj) {
+  return function () {
+    return fn.apply(obj, arguments);
+  };
+};
+var obj = {
+  a: 2,
+};
 
 // var bar = bind(foo, obj);
 // var b = bar(3); // 2 3
