@@ -1,4 +1,7 @@
 function smallestWindowContainsString(str) {
+  if (str.length <= 1) {
+    return str.length;
+  }
   let set = new Set(str);
   let map = new Map();
   let n = set.size;
@@ -35,27 +38,28 @@ function smallestWindowContainsString(str) {
         map.set(str[i], 0);
       } else {
         let val = map.get(str[i]);
-        map.set(str[j], --val);
-      }
-
-      ++i;
-    }
-    while (count === n) {
-      ans = Math.min(ans, j - i);
-
-      if (map.get(str[i]) === 1) {
-        --count;
-        map.set(str[i], 0);
-      } else {
-        let val = map.get(str[i]);
-        map.set(str[j], --val);
+        map.set(str[i], --val);
       }
 
       ++i;
     }
   }
+
+  while (count === n) {
+    ans = Math.min(ans, j - i);
+
+    if (map.get(str[i]) === 1) {
+      --count;
+      map.set(str[i], 0);
+    } else {
+      let val = map.get(str[i]);
+      map.set(str[i], --val);
+    }
+
+    ++i;
+  }
   return ans;
 }
 
-let str = "aabcbcdbca";
+let str = "CCCbAbbBbbC";
 console.log(smallestWindowContainsString(str.split("")));
