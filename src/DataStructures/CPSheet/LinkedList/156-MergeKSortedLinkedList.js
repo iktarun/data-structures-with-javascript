@@ -78,7 +78,7 @@ arr[1].next = new Node(4);
 arr[1].next.next = new Node(6);
 arr[1].next.next.next = new Node(8);
 
-arr[2] = new Node(0);
+arr[2] = new Node(2);
 arr[2].next = new Node(9);
 arr[2].next.next = new Node(10);
 arr[2].next.next.next = new Node(11);
