@@ -188,10 +188,11 @@ class Node {
       if (!node) {
         return count;
       }
-      count = getCount(node.left, low, high, count);
       if (node.data > low && node.data < high) {
         count++;
       }
+      count = getCount(node.left, low, high, count);
+
       count = getCount(node.right, low, high, count);
 
       return count;
