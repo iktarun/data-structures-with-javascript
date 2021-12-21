@@ -1,19 +1,19 @@
-// class Person {
-//   constructor(name, city, country) {
-//     this.name = name;
-//     this.city = city;
-//     this.country = country;
-//   }
-//   greet() {
-//     console.log(this.name, this.city, this.country);
-//   }
-// }
+class Person {
+  constructor(name, city, country) {
+    this.name = name;
+    this.city = city;
+    this.country = country;
+  }
+  greet() {
+    console.log(this.name, this.city, this.country);
+  }
+}
 
-// let p1 = new Person("Tarun", "Bangalore", "India");
-// p1.greet();
-// p2 = p1;
-// p2.name = "Sapna";
-// p2.greet();
+let p1 = new Person("Tarun", "Bangalore", "India");
+p1.greet();
+p2 = p1;
+p2.name = "Sapna";
+p2.greet();
 
 let obj1 = {
   name: "Tarun",
