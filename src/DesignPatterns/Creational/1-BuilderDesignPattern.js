@@ -1,3 +1,5 @@
+// In this pattern we hide the complexity using a builder
+
 function Shop() {
   this.construct = function (builder) {
     builder.step1();
