@@ -13,7 +13,7 @@ function countSetBits(numbers) {
     // console.log(j, k, n, occured);
   }
 
-  //Take modulo with 3 to find the number
+  //Take modulo with 3 to find the number in binary
   for (let j = 0; j < occured.length; j++) {
     if (occured[j] % 3 !== 0) {
       occured[j] = 1;
@@ -21,7 +21,7 @@ function countSetBits(numbers) {
       occured[j] = 0;
     }
   }
-  console.log(occured);
+  console.log("Binary Presentation of that no in array:", occured);
   //This will contain the Binar presentaion of no
 
   let ans = 0;
