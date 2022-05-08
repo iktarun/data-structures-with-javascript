@@ -14,4 +14,14 @@ function modulo(a, b) {
   console.log(res);
 }
 
-modulo(2, 3);
+// Without modulo Recursion
+function moduloUsingRecursion(a, b) {
+  if (b === 0) {
+    return 1;
+  }
+
+  return a * moduloUsingRecursion(a, b - 1);
+}
+
+let res = moduloUsingRecursion(2, 3);
+console.log(res);
