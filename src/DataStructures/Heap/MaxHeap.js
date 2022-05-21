@@ -28,7 +28,7 @@ class Heap {
       }
     }
   }
-
+  // Delete or get max
   extractMax() {
     const max = this.heap[0];
     this.heap[0] = this.heap.pop();
