@@ -30,7 +30,6 @@ function ListNode(val, next) {
 
 function LinkedList() {
   this.head = null;
-  return this;
 }
 
 /*OR class based syntax
@@ -106,14 +105,14 @@ LinkedList.prototype.getAt = function (index) {
 };
 
 LinkedList.prototype.insertAt = function (data, position) {
-  if (this.head === null) {
-    let node = new Node();
-    node.data = data;
-    this.head = node;
-    return this.head;
-  }
+  // if (this.head === null) {
+  //   let node = new Node();
+  //   node.data = data;
+  //   this.head = node;
+  //   return this.head;
+  // }
 
-  if (position === 0) {
+  if (position === 0 || this.head === null) {
     let node = new Node();
     node.data = data;
     node.next = this.head;
@@ -256,6 +255,20 @@ LinkedList.prototype.revereseLinkedListUsingRecursion = function (q, p) {
     this.head = q;
   }
 };
+
+/*
+Reverse a given linked list using recursion
+ */
+LinkedList.prototype.revereseLinkedListUsingRecursionMethod2 = function (head) {
+  if (head === null || head.next === null) {
+    return head;
+  }
+  let newHead = this.revereseLinkedListUsingRecursionMethod2(head.next);
+  let headNext = head.next;
+  headNext.next = head;
+  head.next = null;
+  return newHead;
+};
 /**
  * Detect a loop in a linked list
  * Method1: Using Set or we can call it hashmap
@@ -392,6 +405,36 @@ LinkedList.prototype.checkListPalindrome = function () {
   }
 
   return 1;
+};
+
+// Time: O(N), Space: O(1)
+/**
+ *
+ * @param {*} head
+ * @returns
+ * 1. First get the middle of linked List
+ * 2. pass that node and reverse the linked list after that node to the end
+ * 3. start comparing the list
+ */
+LinkedList.prototype.checkListPalindromeMethod2 = function (head) {
+  if (head === null) {
+    return true;
+  }
+
+  let middleNode = this.middleOfLinkedList(head);
+
+  let lastNode = this.revereseLinkedListUsingRecursionMethod2(middleNode.next);
+
+  let curr = head;
+  while (lastNode !== null) {
+    if (curr.data !== lastNode.data) {
+      return false;
+    }
+    curr = curr.next;
+    lastNode = lastNode.next;
+  }
+
+  return true;
 };
 
 LinkedList.prototype.addTwoLinkedList = function (list1, list2) {
@@ -589,6 +632,17 @@ LinkedList.prototype.rotateRight = function (head, k) {
   return;
 };
 
+LinkedList.prototype.middleOfLinkedList = function (head) {
+  let slwPtr = head;
+  let fastPtr = head;
+  while (fastPtr != null && fastPtr.next != null) {
+    slwPtr = slwPtr.next;
+    fastPtr = fastPtr.next.next;
+  }
+
+  return slwPtr;
+};
+
 const obj = new LinkedList();
 
 /**
@@ -596,15 +650,18 @@ const obj = new LinkedList();
  */
 const list1 = new LinkedList();
 // list1.insertAtEnd(0);
+list1.insertAtEnd(2);
 list1.insertAtEnd(1);
+list1.insertAtEnd(3);
 list1.insertAtEnd(1);
 list1.insertAtEnd(2);
-list1.insertAtEnd(3);
-list1.insertAtEnd(3);
-// list1.print();
+// list1.insertAtEnd(1);
+list1.print();
 // list1.rotateRight(list1.head, 5);
 
-list1.deleteDuplicates();
+let res = list1.checkListPalindromeMethod2(list1.head);
+
+console.log(res);
 
 // const list2 = new LinkedList();
 // list2.insertAtEnd(2);
