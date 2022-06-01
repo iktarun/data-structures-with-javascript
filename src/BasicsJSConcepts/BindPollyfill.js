@@ -70,6 +70,12 @@ Array.prototype.Mybind = function (fn, obj) {
     return fn.apply(obj, arguments);
   };
 };
+
+/**
+ * If you think about how the helper’s code works, it does not have a way
+for a new operator call to override the hard-binding to obj as we just
+observed.
+ */
 var obj = {
   a: 2,
 };
