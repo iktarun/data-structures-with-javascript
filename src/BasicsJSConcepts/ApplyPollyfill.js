@@ -1,3 +1,9 @@
+/**
+ * https://www.youtube.com/watch?v=75W8UPQ5l7k
+ * @param {*} context
+ * @param {*} args
+ */
+
 // Version1
 Function.prototype.MyApplyV1 = function (context, args) {
   context.fnName = this;

@@ -58,6 +58,7 @@ class Node {
     }
   }
   //   Using 2 stacks
+  //https://www.youtube.com/watch?v=k21VKEM8OFY&t=235s
   iterativePostOrderTraversal(root) {
     let stack1 = [];
     let stack2 = [];
@@ -261,6 +262,18 @@ class Node {
     max = getMaxElement(root, 0);
     return max;
   }
+  findMaxApproach2(root) {
+    if (root === null) {
+      return Number.MIN_SAFE_INTEGER;
+    }
+    return Math.max(
+      root.data,
+      Math.max(
+        this.findMaxApproach2(root.left),
+        this.findMaxApproach2(root.right)
+      )
+    );
+  }
   findMin(root) {
     let min = root.data;
 
@@ -360,6 +373,7 @@ root.right.left = new Node(6);
 root.right.left.left = new Node(8);
 root.right.right = new Node(7);
 root.right.right.right = new Node(9);
+console.log(root.findMaxApproach2(root));
 
 //Find the max element in the Tree
 console.log(

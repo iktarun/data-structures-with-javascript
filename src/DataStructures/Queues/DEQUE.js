@@ -1,3 +1,6 @@
+/**
+ * Double ended Queue, insert/delete in both ends
+ */
 class Deque {
   constructor() {
     this.data = {}; // Or Array, but that really does not add anything useful

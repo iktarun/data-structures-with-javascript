@@ -1,3 +1,6 @@
+/**
+ * https://www.youtube.com/watch?v=75W8UPQ5l7k
+ */
 // Example for Timeout or callback
 function foo1() {
   setTimeout(function () {

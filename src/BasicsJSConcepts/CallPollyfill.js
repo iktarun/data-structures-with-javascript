@@ -1,3 +1,8 @@
+/**
+ *https://www.youtube.com/watch?v=75W8UPQ5l7k
+ * @param {*} context
+ * @param  {...any} args
+ */
 // Version1
 Function.prototype.MyCallV1 = function (context, ...args) {
   context.fnName = this;
