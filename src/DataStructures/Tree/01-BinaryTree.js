@@ -140,19 +140,36 @@ class Node {
   }
 
   countNoOfLeafNodes(ptr) {
-    let x, y;
-
-    if (ptr !== null) {
-      x = this.countNoOfLeafNodes(ptr.left);
-      y = this.countNoOfLeafNodes(ptr.right);
-
-      if (ptr.left === null && ptr.right === null) {
-        return x + y + 1;
-      } else {
-        return x + y;
-      }
+    //Method1
+    if (ptr === null) {
+      return 0;
     }
-    return 0;
+
+    if (ptr.left === null && ptr.right === null) {
+      return (
+        1 +
+        this.countNoOfLeafNodes(ptr.left) +
+        this.countNoOfLeafNodes(ptr.right)
+      );
+    } else {
+      return (
+        this.countNoOfLeafNodes(ptr.left) + this.countNoOfLeafNodes(ptr.right)
+      );
+    }
+    /*Method2
+    // let x, y;
+
+    // if (ptr !== null) {
+    //   x = this.countNoOfLeafNodes(ptr.left);
+    //   y = this.countNoOfLeafNodes(ptr.right);
+
+    //   if (ptr.left === null && ptr.right === null) {
+    //     return x + y + 1;
+    //   } else {
+    //     return x + y;
+    //   }
+    // }
+    // return 0;*/
   }
   countNoOfNodesWithDegreeTwo(ptr) {
     let x, y;
@@ -373,12 +390,12 @@ root.right.left = new Node(6);
 root.right.left.left = new Node(8);
 root.right.right = new Node(7);
 root.right.right.right = new Node(9);
-console.log(root.findMaxApproach2(root));
+// console.log(root.findMaxApproach2(root));
 
-//Find the max element in the Tree
-console.log(
-  root.lowestCommonAncestor(root, root.left.left, root.right.right.right)
-);
+// //Find the max element in the Tree
+// console.log(
+//   root.lowestCommonAncestor(root, root.left.left, root.right.right.right)
+// );
 
 // Recursive methods
 // console.log("PRE-ORDER TRAVERSAL");
@@ -409,8 +426,8 @@ console.log(
 // console.log("HEIGHT OF BINARY TREE, RECURSIVELY");
 // console.log(root.heightOfTree(root));
 
-// console.log("COUNT NO OF LEAF NODES, RECURSIVELY");
-// console.log(root.countNoOfLeafNodes(root));
+console.log("COUNT NO OF LEAF NODES, RECURSIVELY");
+console.log(root.countNoOfLeafNodes(root));
 
 // console.log("COUNT NO OF NODES WITH DEGREE 2, RECURSIVELY");
 // console.log(root.countNoOfNodesWithDegreeTwo(root));

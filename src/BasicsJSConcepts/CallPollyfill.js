@@ -1,4 +1,6 @@
-/**
+/** These are used to share the logic of a function using the given context object
+ * We use the ... operator to pass the value if we want to get it in calling function via comma seperate value
+ * ...[].slice.call(arguments, 1)
  *https://www.youtube.com/watch?v=75W8UPQ5l7k
  * @param {*} context
  * @param  {...any} args
@@ -6,6 +8,7 @@
 // Version1
 Function.prototype.MyCallV1 = function (context, ...args) {
   context.fnName = this;
+  // debugger;
   context.fnName(...args);
 };
 

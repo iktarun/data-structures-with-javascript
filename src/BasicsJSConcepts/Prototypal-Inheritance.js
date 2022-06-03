@@ -28,12 +28,13 @@ function Rabbit(fname) {
 }
 Rabbit.prototype = {
   eats: true,
+  sleep: true,
 };
 
 let rabbit = new Rabbit("Sapna");
-
-// delete rabbit.eats;
-// delete Rabbit.prototype.eats;
+debugger;
+delete rabbit.eats; //Delete operation will not delete object property, becuase it belongs to its prototype
+delete Rabbit.prototype.eats; //It will delete the property
 // Rabbit.prototype = {
 //   eats: true,
 // };

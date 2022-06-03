@@ -17,7 +17,7 @@
   //OR
   //Object.setPrototypeOf( Bar.prototype, Foo.prototype );
   // Bar.prototype = Foo.prototype; //Bad approach
-  //Bar.prototype = new Foo(); // //Bad approach..need to find the anser for this
+  //Bar.prototype = new Foo(); // //Bad approach..need to find the answer for this
   // Beware! Now `Bar.prototype.constructor` is gone,
   // and might need to be manually "fixed" if you're
   // in the habit of relying on such properties!
