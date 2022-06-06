@@ -643,6 +643,26 @@ LinkedList.prototype.middleOfLinkedList = function (head) {
   return slwPtr;
 };
 
+// This approach will take O(N^2) and can be optimized to O(N)
+LinkedList.prototype.diameterOfBinaryTree = function (root) {
+  // Base Case when tree is empty
+  if (root == null) return 0;
+
+  // Get the height of left and right sub-trees
+  let lheight = this.height(root.left);
+  let rheight = this.height(root.right);
+
+  // Get the diameter of left and right sub-trees
+  let ldiameter = this.diameterOfBinaryTree(root.left);
+  let rdiameter = this.diameterOfBinaryTree(root.right);
+
+  // Return max of the following tree:
+  // 1) Diameter of left subtree
+  // 2) Diameter of right subtree
+  // 3) Height of left subtree + height of right subtree +1
+  return Math.max(lheight + rheight, Math.max(ldiameter, rdiameter));
+};
+
 const obj = new LinkedList();
 
 /**
