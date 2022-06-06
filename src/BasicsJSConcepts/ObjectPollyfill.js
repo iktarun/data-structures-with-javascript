@@ -72,3 +72,47 @@ if (typeof Object.assign !== "function") {
     configurable: true,
   });
 }
+
+//**************************************************************** */
+//                  Custom one these are not part of Objects
+//********************************************************************* */
+/**
+ *
+ */
+/**
+ * Iterable objects are a generalization of arrays. That’s a concept that allows us to make any object useable in a for..of loop.
+ * Iterables
+ */
+
+let range = {
+  from: 1,
+  to: 5,
+
+  [Symbol.iterator]() {
+    this.current = this.from;
+    return this;
+  },
+
+  next() {
+    if (this.current <= this.to) {
+      return { done: false, value: this.current++ };
+    } else {
+      return { done: true };
+    }
+  },
+};
+
+//1 way to call it
+// for (let num of range) {
+//   console.log(num); // 1, then 2, 3, 4, 5
+// }
+
+//2nd way to call it
+let item = range[Symbol.iterator]();
+// console.log(item);
+console.log(item.next());
+console.log(item.next());
+console.log(item.next());
+console.log(item.next());
+console.log(item.next());
+console.log(item.next()); //Stop here

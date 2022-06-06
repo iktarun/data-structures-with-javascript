@@ -32,7 +32,7 @@ Rabbit.prototype = {
 };
 
 let rabbit = new Rabbit("Sapna");
-debugger;
+// debugger;
 delete rabbit.eats; //Delete operation will not delete object property, becuase it belongs to its prototype
 delete Rabbit.prototype.eats; //It will delete the property
 // Rabbit.prototype = {
@@ -44,3 +44,29 @@ let rabbit1 = new Rabbit("Tarun");
 
 console.log("rabbit:", rabbit.eats); // ?
 console.log("rabbit1:", rabbit1.eats); // ?
+
+//for...in loop
+
+let obj1 = {
+  fname: "Tarun",
+  getfName() {
+    console.log("First name is:", this.fname);
+  },
+};
+
+let obj2 = {
+  lname: "Tarun",
+  getlName() {
+    console.log("Last name is:", this.lname);
+  },
+  __proto__: obj1,
+};
+
+obj2.getlName();
+
+//It will only print object own properties plus referenced object properties in chain
+for (key in obj2) {
+  console.log(key, obj2[key]);
+}
+
+console.log(Object.keys(obj2)); //It will only print object own properties

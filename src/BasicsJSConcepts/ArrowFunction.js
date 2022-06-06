@@ -57,3 +57,24 @@ let test = (...args) => {
 // obj.b.call(obj); // prints undefined, Window {...} (or the global object)
 // obj.c(); // prints 10, Object {...}
 // test(2, 3);
+
+// Can not access the data inside foreach, replace this function with below code
+/**
+ * showList() {
+    this.students.forEach(
+      student => alert(this.title + ': ' + student)
+    );
+ */
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(function (student) {
+      // Error: Cannot read property 'title' of undefined
+      console.log(this, this.title + ": " + student);
+    });
+  },
+};
+
+group.showList();
