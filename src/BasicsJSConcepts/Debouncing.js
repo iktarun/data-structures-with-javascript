@@ -1,3 +1,5 @@
+/* <input type="text" onkeypress="debounce(event)" /> */
+
 let counter = 0;
 function onType(e) {
   console.log(counter++, e.target.value);
