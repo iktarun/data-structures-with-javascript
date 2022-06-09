@@ -1,5 +1,8 @@
 /* Class containing left and right child of current
-   node and key value*/
+   node and key value
+   https://www.youtube.com/watch?v=jQS5IC9Gmm0&list=PLUcsbZa0qzu3yNzzAxgvSgRobdUUJvz7p&index=67
+   Abdul Bari videos
+   */
 class Node {
   constructor(val) {
     this.data = val;
@@ -82,6 +85,17 @@ class Node {
       prev.right = node;
     }
     return;
+  }
+  insertRecursive(root, data) {
+    if (root === null) {
+      return new Node(data);
+    }
+
+    if (data <= root.data) {
+      root.left = this.insertRecursive(root.left, data);
+    } else {
+      root.right = this.insertRecursive(root.right, data);
+    }
   }
 
   //Function to check whether a Binary Tree is BST or not.
