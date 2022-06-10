@@ -87,15 +87,21 @@ class Node {
     return;
   }
   insertRecursive(root, data) {
-    if (root === null) {
+    if (root == null) {
       return new Node(data);
+      // return root;
     }
 
-    if (data <= root.data) {
-      root.left = this.insertRecursive(root.left, data);
-    } else {
+    /* Otherwise, recur down the tree, not putting the duplicate values */
+    if (data < root.data) root.left = this.insertRecursive(root.left, data);
+    else if (data > root.data)
       root.right = this.insertRecursive(root.right, data);
-    }
+
+    /* return the (unchanged) node pointer 
+    This will return the orignal root node
+    */
+    console.log("root:", root.data);
+    return root;
   }
 
   //Function to check whether a Binary Tree is BST or not.
@@ -217,18 +223,29 @@ class Node {
   }
 }
 
+//iterative approach
+// let root = new Node(30);
+// root.insertRecursive(root, 20);
+// root.insertRecursive(root, 40);
+// root.insertRecursive(root, 10);
+// root.insertRecursive(root, 25);
+// root.insertRecursive(root, 35);
+// root.insertRecursive(root, 50);
+// console.log("Finalling:", root);
+/**
+ *
+ */
+
 let root = new Node(30);
-// root.insertIterativeApproach(root, 20);
-// root.insertIterativeApproach(root, 40);
-// root.insertIterativeApproach(root, 10);
-// root.insertIterativeApproach(root, 25);
-// root.insertIterativeApproach(root, 35);
-// root.insertIterativeApproach(root, 50);
-root.right = new Node(40);
-root.left = new Node(20);
-root.right.right = new Node(50);
-root.left.left = new Node(10);
-console.log(root.getCountLieInGivenRange(root, 5, 45));
+root.insertRecursive(root, 20);
+root.insertRecursive(root, 40);
+root.insertRecursive(root, 10);
+console.log("Finalling:", root);
+// root.right = new Node(40);
+// root.left = new Node(20);
+// root.right.right = new Node(50);
+// root.left.left = new Node(10);
+// console.log(root.getCountLieInGivenRange(root, 5, 45));
 // root.levelOrderTraversal(root);
 // console.log(root.right.right);
 // root.left = new Node(20);
