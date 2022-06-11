@@ -2,7 +2,10 @@
  *  1. Store word in TRIE
     2. Search a word, check wether a string is present in the TRIE or not
     3. Word starts with some given prefix
-    NOTE: Root will not store any data it will store the reference to its children node which will contain the data
+NOTE: 1.Root will not store any data it will store the reference to its children node which will contain the data
+    Thanks.
+    2. Take array size as 256 to accommodate all chars.
+    3. You can use the character itself without subtraction (base) because 0-255 covers all chars. You can optimize size if you know which symbol has the lowest ASCII value.
 */
 
 // Javascript implementation of search and insert operations

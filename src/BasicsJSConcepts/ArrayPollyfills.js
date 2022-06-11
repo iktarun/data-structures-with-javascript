@@ -40,8 +40,8 @@ if (!Array.prototype.myFlat) {
     },
   });
 }
-const arr = [1, 2, [3, 4, [5, 6]]];
-console.log(arr.myFlat());
+// const arr = [1, 2, [3, 4, [5, 6]]];
+// console.log(arr.myFlat());
 
 /**
  * Array.prototype.isArray()
@@ -181,6 +181,11 @@ if (!Array.prototype.myForEach) {
  * version 0.0.0
  * Feature	        Chrome  Firefox Internet Explorer   Opera	Safari	Edge
  * Basic support    No      No      No                  No    No      No
+ * (method) Array<number>.map<U>(callbackfn: (value: number, index: number, array: number[]) => U, thisArg?: any): U[]
+Calls a defined callback function on each element of an array, and returns an array that contains the results.
+@param callbackfn — A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array.
+
+@param thisArg — An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
  * -------------------------------------------------------------------------------
  */
 if (!Array.prototype.myMap) {
@@ -189,6 +194,7 @@ if (!Array.prototype.myMap) {
     enumerable: false,
     configurable: true,
     value: function (callback, context) {
+      console.log("context:", context);
       if (callback == null) {
         throw new TypeError("callback is null or not defined");
       }
@@ -209,7 +215,7 @@ if (!Array.prototype.myMap) {
   });
 }
 /**
- * Array.prototype.myForEach()
+ * Array.prototype.myFilter()
  * version 0.0.0
  * Feature	        Chrome  Firefox Internet Explorer   Opera	Safari	Edge
  * Basic support    No      No      No                  No    No      No
@@ -282,3 +288,10 @@ let arr = [2, 3, 4, 5, 7];
 let resducedValue = arr.myReduce(reducer, 5);
 console.log(resducedValue);
 */
+
+/* Map utlity */
+
+const array1 = [1, 4, 9, 16];
+const map1 = array1.myMap((x) => x * 2);
+console.log(map1);
+array1.map;
