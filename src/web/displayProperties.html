@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- https://www.samanthaming.com/pictorials/css-inline-vs-inlineblock-vs-block/ -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Properties</title>
+    <style>
+      div.outer {
+        min-height: 100px;
+        min-width: 100px;
+        border: 1px solid black;
+        padding: 30px;
+        display: block;
+      }
+      div.inner {
+        min-height: 100px;
+        min-width: 100px;
+        border: 1px solid blue;
+        padding: 30px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+  </body>
+</html>
