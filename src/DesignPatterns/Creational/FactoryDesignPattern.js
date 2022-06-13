@@ -1,3 +1,6 @@
+/*Need to confirm, whether we can use new keyword for factory function or not
+With the factory pattern we can use factory functions in order to create new objects. A function is a factory function when it returns a new object without the use of the new keyword!
+*/
 function animalFactory() {
   this.createAnimal = function (animalType) {
     let animal;
