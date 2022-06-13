@@ -1,5 +1,11 @@
 ## Checkout Web.dev course for more details
 
+- Definition:
+
+The SOLID principles were developed to combat these problematic design patterns.
+
+The broad goal of the SOLID principles is to reduce dependencies so that engineers change one area of software without impacting others. Additionally, they’re intended to make designs easier to understand, maintain, and extend. Ultimately, using these design principles makes it easier for software engineers to avoid issues and to build adaptive, effective, and agile software.
+
 ## S.O.L.I.D. STANDS FOR:
 
 S — Single responsibility principle
