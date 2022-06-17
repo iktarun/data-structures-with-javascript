@@ -9,7 +9,7 @@ function maxSubarraySum(arr) {
   let maxSum = Number.MIN_SAFE_INTEGER;
   for (let i = 0; i < arr.length; i++) {
     totalSum = 0;
-    for (let j = 0; j < arr.length; j++) {
+    for (let j = i; j < arr.length; j++) {
       totalSum += arr[j];
       if (totalSum > maxSum) {
         maxSum = totalSum;
@@ -38,5 +38,5 @@ function maxSubarraySumUsingKadanesAlgorithm(arr) {
   return msf;
 }
 
-let arr = [-2, -3, 4, -1, -2, 1, 5, -3];
-console.log(maxSubarraySumUsingKadanesAlgorithm(arr));
+let arr = [1, 2, 3, -2, 5];
+console.log(maxSubarraySum(arr));
