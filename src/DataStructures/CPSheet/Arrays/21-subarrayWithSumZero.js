@@ -5,7 +5,7 @@
 // Time: O(n)
 // Space: O(n)
 // If we add something in a number it should increase, but after adding no
-// if same no comes again it means subarray in making 0
+// if same no comes again it means, it between there is subarray which is making it 0
 function subArrayExists(arr, n) {
   // code here
   let s = 0;

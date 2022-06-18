@@ -1,5 +1,5 @@
 //User function Template for javascript
-
+// cosss valley problem same
 /**
  * @param {number[]} arr
  * @param {number} n
@@ -45,4 +45,49 @@ var minJumps = function (N) {
   return ans;
 };
 
-console.log(minJumps([2, 2, 3, 2, 6, 7], 6));
+/**
+ * @param {number[]} arr
+ * @param {number} n
+ * @return {number}
+ */
+// Need to fix working for some inputs not for all
+class Solution {
+  minJumps(arr, n) {
+    //code here
+    let currIndex = 0;
+    let steps = 0;
+
+    function getMax(arr, index) {
+      let currIndex = index + 1;
+      let maxIndex = index + 1;
+
+      while (currIndex <= arr[index] + index) {
+        // console.log("getMAx currIndex:", currIndex);
+        if (arr[currIndex] + currIndex > maxIndex) {
+          maxIndex = currIndex;
+        }
+        // maxIndex = Math.max(maxIndex, arr[currIndex] + currIndex);
+        currIndex++;
+      }
+
+      return maxIndex;
+    }
+
+    while (true) {
+      console.log("currIndex:", currIndex);
+
+      if (arr[currIndex] + currIndex >= n) {
+        break;
+      }
+      steps++;
+
+      //Get max element from the steps range
+      const maxIndex = getMax(arr, currIndex);
+      console.log("maxIndex:", maxIndex);
+      currIndex = maxIndex;
+    }
+    return steps;
+  }
+}
+let arr = [1, 4, 3, 2, 6, 7]; //[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]
+console.log(new Solution().minJumps(arr, arr.length));

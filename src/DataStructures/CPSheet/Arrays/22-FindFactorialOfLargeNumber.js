@@ -2,6 +2,9 @@
 
 // This function finds factorial of large numbers
 // and prints them
+
+// Solution2: We can also do this easily by doubly linked List
+
 function factorial(n) {
   let res = [];
 
@@ -46,6 +49,7 @@ function multiply(x, res, res_size) {
     carry = Math.floor(carry / 10);
     res_size++;
   }
+  console.log(res);
   return res_size;
 }
 
