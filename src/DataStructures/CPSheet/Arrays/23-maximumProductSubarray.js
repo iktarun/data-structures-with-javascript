@@ -58,8 +58,9 @@ function maxProductUsingKadanesAlgorithm(arr) {
 }
 
 // This is the most optimized solution O(n). Here we will run 2 loops one from start and another from end of array
+// Its similar to Kadanes algoritm with minor changes, looks carefully
 // case1: if 0 then start multiplyRes = 1
-// case 2: if -ve dont do anython just process
+// case 2: if -ve dont do anything just process
 function maxProductSolution2(nums, len) {
   let ans = Number.MIN_SAFE_INTEGER;
   let m = 1;

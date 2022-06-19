@@ -1,40 +1,41 @@
 function spiralPrint(m, n, arr) {
   // m ending row index
-  // k starting row index
+  // row starting row index
   // n ending column index
-  // l starting column index
+  // col starting column index
   // i iterator
 
-  let k = 0;
-  let l = 0;
+  let row = 0;
+  let col = 0;
   let i;
 
-  while (k < m && l < n) {
+  while (row < m && col < n) {
     // Print Top row
-    for (i = l; i < n; i++) {
-      console.log(arr[k][i]);
+    for (i = col; i < n; i++) {
+      console.log(arr[row][i]);
     }
-    k++;
+    row++;
 
     // Print Last column
-    for (i = k; i < m; i++) {
+    for (i = row; i < m; i++) {
       console.log(arr[i][n - 1]);
     }
     n--;
 
     // Print Bottom Row
-    if (k < m) {
-      for (i = n - 1; i >= l; i--) {
+    if (row < m) {
+      for (i = n - 1; i >= col; i--) {
         console.log(arr[m - 1][i]);
       }
       m--;
     }
+
     // Print left column
-    if (l < n) {
-      for (i = m - 1; i >= k; i--) {
-        console.log(arr[i][l]);
+    if (col < n) {
+      for (i = m - 1; i > row; i--) {
+        console.log(arr[i][col]);
       }
-      l++;
+      col++;
     }
   }
 }
