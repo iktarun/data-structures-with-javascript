@@ -1,3 +1,6 @@
+// Example to support all data type
+// https://codesandbox.io/s/geh2x?file=/src/index.js:0-1452
+
 function spiralPrint(m, n, arr) {
   // m ending row index
   // row starting row index
@@ -32,7 +35,7 @@ function spiralPrint(m, n, arr) {
 
     // Print left column
     if (col < n) {
-      for (i = m - 1; i > row; i--) {
+      for (i = m - 1; i >= row; i--) {
         console.log(arr[i][col]);
       }
       col++;

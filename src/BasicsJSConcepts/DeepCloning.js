@@ -13,7 +13,7 @@ let obj2 = {
 obj2 = JSON.parse(JSON.stringify(obj1));
 // obj2.greet();
 obj2.name = "Sapna";
-obj2.greet(); //Error not defind..comment out this line to run the program
+//obj2.greet(); //Error not defind..comment out this line to run the program
 
 // Good Apporach
 

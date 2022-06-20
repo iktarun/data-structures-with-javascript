@@ -24,4 +24,4 @@ let matrix = [
 
 let N = 6;
 
-console.log(matSearch(matrix, N, N, 65));
+console.log(matSearch(matrix, N, N, 52));
