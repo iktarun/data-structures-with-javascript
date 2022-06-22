@@ -1,3 +1,5 @@
+// Learn Algo Abdul Bari: https://www.youtube.com/watch?v=sSno9rV8Rhg
+
 /**
  * @param {number} x
  * @param {number} y
@@ -24,4 +26,38 @@ class Solution {
       return Math.max(this.lcs(x, y - 1, s1, s2), this.lcs(x - 1, y, s1, s2));
     }
   }
+  // Use this instead, Forget about the above one
+  lcsUsingDP(m, n, s1, s2, dp) {
+    // code here
+    if (m === 0 || n === 0) {
+      return 0;
+    }
+    if (s1[m] === s2[n]) {
+      return (dp[m][n] = 1 + this.lcs(m - 1, n - 1, s1, s2));
+    }
+
+    if (dp[m][n] != -1) {
+      return dp[m][n];
+    }
+
+    if (s1[m] !== s2[n]) {
+      return (dp[m][n] = Math.max(
+        this.lcs(m, n - 1, s1, s2),
+        this.lcs(m - 1, n, s1, s2)
+      ));
+    }
+  }
 }
+
+let obj = new Solution();
+let X = "ABCDGH";
+let Y = "ACDGHR";
+let m = X.length;
+let n = Y.length;
+let dp = new Array(m + 1);
+for (let i = 0; i < m + 1; i++) {
+  dp[i] = new Array(n + 1).fill(-1);
+}
+
+let res = obj.lcs(m, n, X, Y, dp);
+console.log("Length of longest common seubsequence is:", res);
