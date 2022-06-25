@@ -55,7 +55,7 @@ class Heap {
           (swapIndex !== null &&
             this.heap[rightChildIndex] < this.heap[leftChildIndex])
         ) {
-          swapIndex = leftChildIndex;
+          swapIndex = rightChildIndex;
         }
       }
 
