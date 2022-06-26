@@ -1,3 +1,14 @@
+/**
+ *
+ * @param {*} arr
+ * @returns
+ * @desc:  Logic is very simple,
+ * Step1: Copy all the k size elements from the end of array
+ * Step2: Copy elements from start + k index
+ * Step3: Copy the step1 elements from the begining
+ *
+ */
+
 function cyclicallyRotateAnArray(arr) {
   let temp = arr[arr.length - 1];
   for (let i = arr.length - 2; i >= 0; i--) {
