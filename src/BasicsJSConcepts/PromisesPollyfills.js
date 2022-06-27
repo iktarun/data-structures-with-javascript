@@ -1,3 +1,5 @@
+// https://codepen.io/jamesives/pen/zaapQp
+
 // False Promises
 const firstPromise = new Promise((resolve, reject) => {
   setTimeout(() => resolve("Data payload from the first promise..."), 3000);
