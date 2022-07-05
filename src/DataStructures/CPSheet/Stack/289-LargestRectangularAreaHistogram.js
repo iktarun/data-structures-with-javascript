@@ -1,4 +1,5 @@
 // https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+//It is similar to find previous and next smaller element, just we will store index not value
 
 function previousSmallerElements(arr) {
   let stack = [];
@@ -7,18 +8,18 @@ function previousSmallerElements(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     if (stack.length === 0) {
-      stack[++top] = arr[i];
+      stack[++top] = i;
       psArr[i] = -1;
     } else {
-      while (top >= 0 && stack[top] >= arr[i]) {
+      while (top >= 0 && arr[stack[top]] >= arr[i]) {
         stack.length = stack.length !== 0 ? --stack.length : 0;
         top--;
       }
       if (stack.length === 0) {
-        stack[++top] = arr[i];
+        stack[++top] = i;
         psArr[i] = -1;
       } else {
-        let temp = arr[i];
+        let temp = i;
         psArr[i] = stack[top];
         stack[++top] = temp;
       }
@@ -34,18 +35,18 @@ function nextSmallerElements(arr) {
 
   for (let i = arr.length - 1; i >= 0; i--) {
     if (stack.length === 0) {
-      stack[++top] = arr[i];
+      stack[++top] = i;
       psArr[i] = -1;
     } else {
-      while (top >= 0 && stack[top] >= arr[i]) {
+      while (top >= 0 && arr[stack[top]] >= arr[i]) {
         stack.length = stack.length !== 0 ? --stack.length : 0;
         top--;
       }
       if (stack.length === 0) {
-        stack[++top] = arr[i];
+        stack[++top] = i;
         psArr[i] = -1;
       } else {
-        let temp = arr[i];
+        let temp = i;
         psArr[i] = stack[top];
         stack[++top] = temp;
       }
