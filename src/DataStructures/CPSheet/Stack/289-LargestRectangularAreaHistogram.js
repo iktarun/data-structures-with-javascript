@@ -1,6 +1,6 @@
 // https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
 //It is similar to find previous and next smaller element, just we will store index not value
-
+// we can still improce this , no need to maintain top variable, check stock span problem in the repo
 function previousSmallerElements(arr) {
   let stack = [];
   let top = -1;

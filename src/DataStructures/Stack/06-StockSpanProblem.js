@@ -36,7 +36,7 @@ class Solution {
     let stack = [0];
 
     for (let i = 1; i < n; i++) {
-      console.log("length:", stack);
+      // console.log("length:", stack);
       while (stack.length !== 0 && price[stack[stack.length - 1]] <= price[i]) {
         stack.pop();
       }
