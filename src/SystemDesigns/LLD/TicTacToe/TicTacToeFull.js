@@ -1,5 +1,22 @@
 class TicTacToe {
   constructor(n) {
+    // this.matrix = [];
+    // for (var i = 0; i < n; i++) {
+    //   this.matrix[i] = [];
+    //   for (var j = 0; j < n; j++) {
+    //     this.matrix[i][j] = "-";
+    //   }
+    // }
+    this.n = n;
+    this.initBoard(n);
+    this.players = {
+      p1: "x",
+      p2: "0",
+    };
+  }
+
+  initBoard(n) {
+    // let n = this.n;
     this.matrix = [];
     for (var i = 0; i < n; i++) {
       this.matrix[i] = [];
@@ -7,10 +24,6 @@ class TicTacToe {
         this.matrix[i][j] = "-";
       }
     }
-    this.players = {
-      p1: "x",
-      p2: "0",
-    };
   }
 
   checkForWinner(x, y, p) {
@@ -120,6 +133,10 @@ class TicTacToe {
       console.log("Please try some other box, this is already marked");
     }
   }
+
+  reset() {
+    this.initBoard(this.n);
+  }
 }
 
 let obj = new TicTacToe(3);
@@ -132,4 +149,7 @@ obj.printBoard();
 obj.makeMove(1, 1, "p2");
 obj.printBoard();
 obj.makeMove(2, 0, "p2");
+obj.printBoard();
+// RESET
+obj.reset();
 obj.printBoard();
