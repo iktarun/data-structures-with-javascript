@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.dir = "rtl";
+      //   let parent = document.getElementById("parent");
+      //   parent.style.height = "300px";
+      //   window.onload = function () {
+      //     const heading = document.createElement("h1");
+      //     const heading_text = document.createTextNode("Big Head!");
+      //     heading.appendChild(heading_text);
+      //     document.body.appendChild(heading);
+      //   };
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <div class="parent" id="parent">
+      <div class="child">child1</div>
+      <div class="child">child2</div>
+    </div>
+  </body>
+  <script>
+    // All the selectors given below
+    // ID document.getElementById("parent")
+    let parent = document.querySelector("#parent");
+
+    console.log(parent);
+    parent.style.height = "300px";
+    parent.style.backgroundColor = "#ccc";
+    parent.style.border = "2px dotted red";
+
+    // get the children of the parent node
+    // let allChildren = Array.from(parent.childrens);
+
+    // Child, className
+    let childrens = Array.from(document.getElementsByClassName("child"));
+    // console.log(childrens);
+    childrens.forEach((child) => {
+      child.style.height = "100px";
+      child.style.border = "2px solid red";
+    });
+
+    /**
+     * Query selector. document.querySelector
+     * In query selctor we need to prefix the selector with the # for id and .class for classes
+     * It will select only first found match, querySelectAll is used to get the all matching
+     * */
+  </script>
+</html>
