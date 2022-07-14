@@ -26,3 +26,7 @@ Approach to choose points, to solve any type of problem.
 - Using 2 loops
 - Using Hash table
 - Using Sorting
+
+# Get the right pointer length, spliting arrau into groups and the last group would be either n-1 or will exceed arr length. use below formula to calculate the remaining length of array
+
+- let right = Math.min(i + k - 1, n - 1); //for more see the reerse array in groups problem

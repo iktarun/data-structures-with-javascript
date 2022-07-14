@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- https://www.codegrepper.com/code-examples/javascript/js+find+all+text+elements -->
+<html>
+  <head>
+    <title>My Document</title>
+    <script></script>
+  </head>
+  <body>
+    <div id="parent">
+      <h1>Header</h1>
+      <p>Paragraph</p>
+    </div>
+  </body>
+  <script>
+    (function () {
+      let node = document.getElementById("parent");
+      node = node.firstChild;
+      while (node) {
+        console.log("node:", node);
+        console.log(node.textContent);
+        node = node.nextSibling;
+      }
+    })();
+  </script>
+</html>
