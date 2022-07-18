@@ -3,6 +3,7 @@
  * the stack and only the element on the top may be removed. This is an example
  * of an array implementation of a Stack. So an element can only be added/removed
  * from the end of the array.
+ * Also need to implmenet 2 stacks using one array
  */
 
 // Functions: push, pop, peek, view, length
