@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="./index.js"></script>
+    <style>
+      input {
+        height: 30px;
+        width: 200px;
+      }
+      ul {
+        list-style-type: none;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -13,7 +22,7 @@
         type="text"
         value=""
         placeholder="Type...."
-        onkeyup="debouncedSearch(this)"
+        onkeypress="debouncedSearch(this)"
       />
       <div id="suggestions"></div>
     </div>
