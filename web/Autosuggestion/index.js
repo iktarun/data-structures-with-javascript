@@ -39,8 +39,8 @@ function onSearch(e) {
     let textNode = document.createTextNode(filtered[i]);
     newLiTag.appendChild(textNode);
     ul.appendChild(newLiTag);
-    suggestion.appendChild(ul);
   }
+  suggestion.appendChild(ul);
   console.log(ul);
 }
 
