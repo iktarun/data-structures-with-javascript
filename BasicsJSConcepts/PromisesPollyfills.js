@@ -108,3 +108,25 @@ promiseAny([firstPromise, secondPromise])
   .catch((error) => {
     console.log("erros:", error);
   });
+
+/**
+ * How to cancel a request
+ */
+
+// False Promises
+function firstPromise(token) {
+  return new Promise((resolve, reject) => {
+    token.cancel = reject;
+    setTimeout(() => reject("Data payload from the first promise..."), 2000);
+  });
+}
+
+let token = {};
+
+firstPromise(token)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => console.log(err));
+
+token.cancel();
