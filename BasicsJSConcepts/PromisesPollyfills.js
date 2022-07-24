@@ -130,3 +130,13 @@ firstPromise(token)
   .catch((err) => console.log(err));
 
 token.cancel();
+
+// Our function to cancel promises receives a promise and return the same one and a cancel function
+const cancellablePromise = (promiseToCancel) => {
+  let cancel;
+  const promise = new Promise((resolve, reject) => {
+    cancel = reject;
+    promiseToCancel.then(resolve).catch(reject);
+  });
+  return { promise, cancel };
+};
