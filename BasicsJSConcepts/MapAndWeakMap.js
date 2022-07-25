@@ -30,3 +30,49 @@ map.forEach(function (val, key) {
 
 k2 = null;
 wm.get(k2); // undefined
+
+/**
+ * Map Pollyfill
+ */
+
+console.log("##################### Map Pollyfill work#############");
+(function () {
+  function MyMap() {
+    this.map = {};
+  }
+
+  // considering only primitives here
+  MyMap.prototype.set = function (key, item) {
+    this.map[typeof key + "_" + key] = item;
+  };
+
+  MyMap.prototype.get = function (key) {
+    return this.map[typeof key + "_" + key] || -1;
+  };
+
+  MyMap.prototype.size = function () {
+    return Object.keys(this.map).length || 0;
+  };
+
+  MyMap.prototype.clear = function () {
+    this.init();
+  };
+
+  MyMap.prototype.init = function () {
+    this.map = {};
+  };
+
+  let map = new MyMap();
+  console.log(map);
+
+  map.set("1", "str1"); // a string key
+  map.set(1, "num1"); // a numeric key
+  map.set(true, "bool1"); // a boolean key
+
+  // remember the regular Object? it would convert keys to string
+  // Map keeps the type, so these two are different:
+  console.log(map.get(1)); // 'num1'
+  console.log(map.get("1")); // 'str1'
+
+  console.log(map.size()); // 3
+})();
