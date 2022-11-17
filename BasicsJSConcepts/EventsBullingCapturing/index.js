@@ -1,6 +1,10 @@
-document.querySelector("#grandparent").addEventListener("click", () => {
-  console.log("Grapndparent Clicked!");
-});
+document.querySelector("#grandparent").addEventListener(
+  "click",
+  () => {
+    console.log("Grapndparent Clicked!");
+  },
+  true
+);
 
 document.querySelector("#parent").addEventListener(
   "click",

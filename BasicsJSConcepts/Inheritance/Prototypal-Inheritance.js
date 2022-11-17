@@ -70,3 +70,34 @@ for (key in obj2) {
 }
 
 console.log(Object.keys(obj2)); //It will only print object own properties
+
+/*//////////////////////
+Example 2
+/////////////////////////////////////////*/
+function Parent() {
+  this.name = "Parent";
+  this.lname = "Last name";
+}
+
+Parent.prototype.greet = function () {
+  console.log("Hello from " + this.name + this.lname);
+};
+
+function Child() {
+  // This syntax is really important to understand, when we instantiate an object with
+  // new keyword, it will pased by rederence to parent object and there it set the value
+  // in case if not value has been found in child then it will take that from parent
+  Parent.call(this);
+  this.name = "Child";
+}
+
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.constructor = Child;
+
+const child = new Child();
+
+child.greet();
+// hello from Child
+
+child.constructor.name;
+// 'Child'
