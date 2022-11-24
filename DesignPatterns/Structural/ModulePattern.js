@@ -1,3 +1,5 @@
+// https://www.digitalocean.com/community/conceptual-articles/module-design-pattern-in-javascript
+
 const userApi = () => {
   // private variables
   const users = [];

@@ -1,4 +1,4 @@
 # Important site links
 
-https://davidwalsh.name/
-https://www.frontendinterviewhandbook.com/
+- https://davidwalsh.name/
+- https://www.frontendinterviewhandbook.com/
