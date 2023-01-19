@@ -104,4 +104,10 @@ function strictMode() {
   }
   showStrict("Hey");
 }
-strictMode();
+// strictMode();
+
+function FalsyValues() {
+  console.log(null == undefined); // true
+}
+
+FalsyValues();
