@@ -1,5 +1,6 @@
 /**
  * https://javascript.info/currying-partials
+ * https://youtu.be/vQcCNpuaJO8
  * Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
  * @param {*} a
  * @returns
@@ -45,7 +46,7 @@ function sum1(a, b, c) {
 let curriedSum = curry(sum1);
 
 console.log(curriedSum(1, 2, 3)); // 6, still callable normally
-console.log(curriedSum(1)(2, 3)); // 6, currying of 1st arg
-console.log(curriedSum(1)(2)(3)); // 6, full currying
+console.log(curriedSum(2)(2, 3)); // 6, currying of 1st arg
+console.log(curriedSum(3)(2)(3)); // 6, full currying
 
 // console.log(sum1(1, 2)(3)());

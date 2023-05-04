@@ -10,3 +10,5 @@
 - https://www.geeksforgeeks.org/functional-programming-paradigm/
 - How to create an object without Array Prototype? Also how to set object property like **proto** and toString()? https://javascript.info/prototype-methods
 - Clsoure vs Higher Order Functions? https://stackoverflow.com/questions/53899827/are-closures-higher-order-functions
+- Microtask vs tasks
+  https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide

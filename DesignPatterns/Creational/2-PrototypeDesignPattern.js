@@ -29,4 +29,4 @@ let obj2 = {
 obj2 = JSON.parse(JSON.stringify(obj1));
 // obj2.greet();
 obj2.name = "Sapna";
-obj2.greet();
+// obj2.greet();

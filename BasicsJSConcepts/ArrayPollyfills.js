@@ -54,6 +54,18 @@ function flattenArrayUsingRecursion(items) {
 
   return flat;
 }
+
+function flattenArrayUsingRecursionWithOutput(items, output = []) {
+  items.forEach((item) => {
+    if (Array.isArray(item)) {
+      return flattenArrayUsingRecursionWithOutput(item, output);
+    } else {
+      output.push(item);
+    }
+  });
+
+  return output;
+}
 // const arr = [1, 2, [3, 4, [5, 6]]];
 // console.log(arr.myFlat());
 

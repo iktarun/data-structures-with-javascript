@@ -22,8 +22,10 @@ Creational design patterns provide various object creation mechanisms, which inc
 
 - Singelton
   Singletons are classes which can be instantiated once, and can be accessed globally. This single instance can be shared throughout our application, which makes Singletons great for managing global state in an application.
+  ref: https://www.geeksforgeeks.org/singleton-design-pattern/
 
 - Builder
+  Builder pattern aims to “Separate the construction of a complex object from its representation so that the same construction process can create different representations.” It is used to construct a complex object step by step and the final step will return the object. The process of constructing an object should be generic so that it can be used to create different representations of the same object.
 
 ## Structural
 
