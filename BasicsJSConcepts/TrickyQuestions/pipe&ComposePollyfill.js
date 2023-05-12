@@ -10,17 +10,22 @@ const uppercase = (string) => string.toUpperCase();
 // uppercase("Superman");
 // 'SUPERMAN'
 
-const get5Characters = (string) => string.substring(0, 5);
+const get5Characters = (string) => string.
+substring(0, 5);
 // get5Characters("Superman");
 // 'Super'
 
-const reverse = (string) => string.split("").reverse().join("");
+const reverse = (string) => string.split("")
+.reverse().join("");
 reverse("Superman");
 // 'namrepuS'
+
+
 const pipe =
   (...functions) =>
   (value) => {
-    return functions.reduce((currentValue, currentFunction) => {
+    return functions.reduce((currentValue, 
+      currentFunction) => {
       return currentFunction(currentValue);
     }, value);
   };
