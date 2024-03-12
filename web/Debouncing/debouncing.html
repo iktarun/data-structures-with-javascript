@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onkeypress="onSearch(event)" />
+    <span id="list"></span>
+</body>
+<script>
+    let list = ["Takiya","Tanya","Sanjana"]
+    function debounce(func, d){
+        let timer;
+        return function(e){
+            clearTimeout(timer);
+            timer = setTimeout(()=>{
+                func(e);
+            }, d)
+        }
+
+    }
+    function search(event){
+        console.log(event.target.value);
+        const searchKeyword = event.target.value.toLowerCase();
+        const filteredList = list.filter((item)=>item.toLowerCase().includes(searchKeyword));
+        console.log("filteredList:",filteredList)
+        document.getElementById("list").innerHTML = filteredList
+    }
+    const onSearch = debounce(search, 3000)
+</script>
+</html>

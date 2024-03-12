@@ -3,6 +3,7 @@
  * @param {*} arr
  * @returns arr[]
  * Time Complexity: O(n^2)
+ * https://youtu.be/YxuK6A3SvTs
  */
 function maxSubarraySum(arr) {
   let totalSum = 0;
@@ -39,4 +40,4 @@ function maxSubarraySumUsingKadanesAlgorithm(arr) {
 }
 
 let arr = [1, 2, 3, -2, 5];
-console.log(maxSubarraySum(arr));
+console.log(maxSubarraySumUsingKadanesAlgorithm(arr));

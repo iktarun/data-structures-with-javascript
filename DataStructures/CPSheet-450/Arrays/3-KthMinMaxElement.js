@@ -78,10 +78,11 @@ tree.add(31);
 tree.add(6);
 tree.add(99);
 
-let k = 3;
+let k = 1;
 for (let i = 1; i <= k; i++) {
   let min = tree.extractMin();
   if (i === k) {
     console.log(`${k}the Smallest element is:`, min);
   }
 }
+console.log("After operation heap:", tree)

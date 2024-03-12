@@ -18,7 +18,7 @@ function minMaxElementInArray(a, n) {
     return minMax;
   }
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 1; i < n; i++) {
     if (a[i] < minMax.min) {
       minMax.min = a[i];
     }
