@@ -6,7 +6,8 @@ document.querySelector("#grandparent").addEventListener("click", (event) => {
     "currentTarget:",
     event.currentTarget
   );
-});
+
+}, true);
 
 document.querySelector("#parent").addEventListener(
   "click",
@@ -18,8 +19,7 @@ document.querySelector("#parent").addEventListener(
       "currentTarget:",
       event.currentTarget
     );
-  },
-  true
+  }
 );
 
 document.querySelector("#child").addEventListener(
@@ -32,6 +32,6 @@ document.querySelector("#child").addEventListener(
       "currentTarget:",
       event.currentTarget
     );
-  },
-  true
+    event.stopPropagation()
+  }
 );

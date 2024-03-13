@@ -5,15 +5,25 @@
 function foo1() {
   setTimeout(function () {
     console.log(this);
-    // `this` here is lexically inherited from `foo1()`
+    // `this` here is lexically inherited from `foo1()` and it will print underfined, this is global object in here
+    console.log(this.a);
+  }, 3000);
+}
+function foo1WithArrowFunction() {
+  setTimeout(()=>{
+    console.log(this);
+    // `this` here is lexically inherited from `foo1()` it will print 2
     console.log(this.a);
   }, 3000);
 }
 var obj = {
   a: 2,
 };
-// var a = "2";
-foo1.call(obj); // 2
+var obj = {
+  a: 2,
+};
+// var a = "2"; If we put this statemnet then below it will print 2 else undefined
+foo1.call(obj); 
 
 /**
  * This example is before ES6
