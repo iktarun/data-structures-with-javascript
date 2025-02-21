@@ -32,6 +32,6 @@ document.querySelector("#child").addEventListener(
       "currentTarget:",
       event.currentTarget
     );
-    event.stopPropagation()
+    // event.stopPropagation()
   }
 );

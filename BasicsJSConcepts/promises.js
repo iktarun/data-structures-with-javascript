@@ -11,11 +11,11 @@
 // }
 // run();
 
-/*
+
 new Promise(function (resolve, reject) {
   try {
     return setTimeout(() => {
-      throw new Error("Whoops!");
+      throw new Error("Whoops Errro!");
       resolve("Success");
     }, 1000);
   } catch (err) {
@@ -25,7 +25,7 @@ new Promise(function (resolve, reject) {
   .then(
     (result, error) => {
       console.log("Inside chain", result);
-      throw new Error("Whoops!!");
+      throw new Error("Whoops 1!!");
     },
     (error) => {
       console.log("Inside error");
@@ -41,14 +41,17 @@ new Promise(function (resolve, reject) {
     }
   )
   .catch((err) => console.log("catch block", err));
-*/
 
-// Promise.race([
-//   new Promise((resolve, reject) =>
-//     setTimeout(() => reject(new Error("Whoops!")), 1000)
-//   ),
-//   new Promise((resolve, reject) => setTimeout(() => resolve(1), 2000)),
-//   new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000)),
-// ])
-//   .then(console.log)
-//   .catch(console.error); // 1
+
+/*
+
+Promise.any([
+  new Promise((resolve, reject) => setTimeout(() => resolve(1), 2000)),
+  new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000)),
+  new Promise((resolve, reject) =>
+    setTimeout(() => reject(new Error("Whoops!")), 1000)
+  ),
+])
+  .then(console.log)
+  .catch(console.error); // 1
+  */

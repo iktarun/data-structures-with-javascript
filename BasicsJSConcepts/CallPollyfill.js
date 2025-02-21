@@ -35,3 +35,21 @@ var user = {
 };
 
 displayUser.MyCallV1(user, "Bangalore", "India", "call MyCall"); //----> passing context, params
+
+/* Output problem 
+How does this behave differently when using call(), apply(), and bind()?
+
+Expected answer: These methods explicitly set this inside a function. call() and apply() set this temporarily for a single invocation, while bind() creates a new function where this is permanently set to the provided object
+const person = { name: 'Alice' };
+
+function showName() {
+    console.log(this.name);
+}
+
+const boundShowName = showName.bind(person);
+boundShowName();  // Output?
+
+const newPerson = { name: 'Bob' };
+boundShowName.call(newPerson);  // Output?
+
+*/

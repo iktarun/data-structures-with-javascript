@@ -29,6 +29,7 @@ let sum = function (a) {
 
 function curry(func) {
   return function curried(...args) {
+    console.log(args.length, func.length)
     if (args.length >= func.length) {
       return func.apply(this, args);
     } else {

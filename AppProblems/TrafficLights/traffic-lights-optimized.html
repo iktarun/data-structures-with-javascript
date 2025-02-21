@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Light</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #222;
+      }
+      .traffic-light {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: black;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .light {
+        width: 50px;
+        height: 50px;
+        background: gray;
+        border-radius: 50%;
+      }
+      .active {
+        opacity: 1;
+      }
+      .red.active {
+        background: red;
+      }
+      .yellow.active {
+        background: yellow;
+      }
+      .green.active {
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="traffic-light">
+      <div class="light red"></div>
+      <div class="light yellow"></div>
+      <div class="light green"></div>
+    </div>
+
+    <script>
+      const lights = document.querySelectorAll(".light");
+      const sequence = ["red", "yellow", "green"];
+      const timings = [3000, 1000, 2000]; // Red: 3s, Yellow: 1s, Green: 2s
+      let index = 0;
+
+      function changeLight() {
+        // Remove active class from all lights
+        lights.forEach((light) => light.classList.remove("active"));
+
+        // Activate the current light
+        lights[index].classList.add("active");
+
+        // Move to the next light in sequence
+        index = (index + 1) % sequence.length;
+
+        // Schedule the next light change
+        setTimeout(changeLight, timings[index]);
+      }
+
+      // Start the traffic light cycle
+      changeLight();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Lights</title>
+    <style>
+      .outer-box {
+        background-color: black;
+        height: 200px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .inner-box {
+        padding: 5px;
+        margin: 5px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      .bg-white {
+        background-color: white;
+      }
+      .bg-green {
+        background-color: green;
+      }
+      .bg-red {
+        background-color: red;
+      }
+      .bg-yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer-box">
+      <div id="reg-light" class="bg-white inner-box"></div>
+      <div id="yellow-light" class="bg-white inner-box"></div>
+      <div id="green-light" class="bg-white inner-box"></div>
+    </div>
+    <button onclick="startLights()">Start Lights</button>
+    <button onclick="stopLights()">Stop Lights</button>
+  </body>
+  <script>
+    let interval;
+    let redRef = document.querySelector("#reg-light");
+    let yellowRef = document.querySelector("#yellow-light");
+    let greenRef = document.querySelector("#green-light");
+
+    function startLights() {
+      let counter = 1;
+      interval = setInterval(
+        () => {
+          let type = "";
+          let num = counter % 3;
+          console.log(num, type, counter);
+          if (num === 0) {
+            type = "red";
+            counter++;
+          } else if (num === 1) {
+            type = "yellow";
+            counter++;
+          } else if (num === 2) {
+            type = "green";
+            counter++;
+          }
+
+          if (type === "red") {
+            yellowRef.classList.remove("bg-yellow");
+            yellowRef.classList.add("bg-white");
+
+            greenRef.classList.remove("bg-green");
+            greenRef.classList.add("bg-white");
+
+            redRef.classList.remove("bg-white");
+            redRef.classList.add("bg-red");
+          } else if (type === "yellow") {
+            greenRef.classList.remove("bg-green");
+            greenRef.classList.add("bg-white");
+
+            redRef.classList.remove("bg-red");
+            redRef.classList.add("bg-white");
+
+            yellowRef.classList.remove("bg-white");
+            yellowRef.classList.add("bg-yellow");
+          } else if (type === "green") {
+            yellowRef.classList.remove("bg-yellow");
+            yellowRef.classList.add("bg-white");
+
+            redRef.classList.remove("bg-red");
+            redRef.classList.add("bg-white");
+
+            greenRef.classList.remove("bg-white");
+            greenRef.classList.add("bg-green");
+          }
+        },
+        2000,
+        0
+      );
+    }
+    function stopLights() {
+      clearInterval(interval);
+    }
+  </script>
+</html>

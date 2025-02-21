@@ -221,6 +221,9 @@ if (!Array.prototype.myMap) {
     configurable: true,
     value: function (callback, context) {
       console.log("context:", context);
+      if(!context){
+        context = this;
+      }
       if (callback == null) {
         throw new TypeError("callback is null or not defined");
       }

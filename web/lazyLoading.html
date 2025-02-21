@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            border:1px solid red
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="lazy-load" data-src="https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dXJsfGVufDB8fDB8fHww
+        " alt="Lazy loaded image">
+    </div>
+    <div>
+        <img class="lazy-load" data-src="https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXJsfGVufDB8fDB8fHww
+        " alt="Lazy loaded image">
+    </div>
+    
+    <div>
+        <img class="lazy-load" data-src="https://plus.unsplash.com/premium_photo-1664546293816-191e0566f19e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dXJsfGVufDB8fDB8fHww
+        " alt="Lazy loaded image">
+    </div>
+    
+    <div>
+        <img class="lazy-load" data-src="https://plus.unsplash.com/premium_photo-1681506669115-cb6b2d30dbc7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dXJsfGVufDB8fDB8fHww
+        " alt="Lazy loaded image">
+    </div>
+    
+    <div>
+        <img class="lazy-load" data-src="https://plus.unsplash.com/premium_photo-1661596686441-611034b8077e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXJsfGVufDB8fDB8fHww
+        " alt="Lazy loaded image">
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const lazyImages = document.querySelectorAll('img.lazy-load');
+    
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+
+            debugger;
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.remove('lazy-load');
+              observer.unobserve(img);
+            }
+          });
+        });
+    
+        lazyImages.forEach(image => {
+          imageObserver.observe(image);
+        });
+      });
+    </script>
+    
+
+</body>
+</html>
