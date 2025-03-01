@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .invisible {
+        visibility: hidden;
+      }
+      .transparent {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="hidden">Hidden (display: none)</button>
+    <button class="invisible" onclick="alert('transparent clicked!')">
+      Invisible (visibility: hidden)
+    </button>
+    <button class="transparent" onclick="alert('transparent clicked!')">
+      Transparent (opacity: 0)
+    </button>
+  </body>
+</html>

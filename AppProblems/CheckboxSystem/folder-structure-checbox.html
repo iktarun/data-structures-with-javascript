@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox folder structure system</title>
+    <style>
+      .pl-10 {
+        padding-left: 10px;
+      }
+      input[type="checkbox"] {
+        height: 15px;
+        width: 15px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="checkSelection(event)">
+      <input type="checkbox" name="Parent1" />
+      <div class="pl-10">
+        <input type="checkbox" name="Parent2" />
+        <div class="pl-10">
+          <input type="checkbox" name="Child 1" />
+          <input type="checkbox" name="Child 2" />
+        </div>
+      </div>
+      <input type="checkbox" name="Parent3" />
+      <input type="checkbox" name="Parent4" />
+    </div>
+
+    <script>
+      function checkSelection(e) {
+        console.log(e.target);
+        //go to parent and then check all checkbox
+        let parentNode = e.target.parentNode;
+        let allChildChecked = true;
+        parentNode.childNodes.forEach((node) => {
+          if (node.nodeName.toLowerCase() === "input") {
+            if (node.checked) {
+              console.log("node checked!", node);
+            } else {
+              allChildChecked = false;
+            }
+          }
+        });
+        // If all checked, check parent too
+        if (allChildChecked) {
+          // debugger;
+          parentNode.parentNode.childNodes[1].checked = true;
+        }
+      }
+      // var checkboxsAll = document.querySelectorAll("input[type=checkbox]");
+      // debugger;
+
+      // checkbox.addEventListener("click", function () {
+      //   if (this.checked) {
+      //     console.log("Checkbox is checked..");
+      //   } else {
+      //     console.log("Checkbox is not checked..");
+      //   }
+      // });
+    </script>
+  </body>
+</html>
