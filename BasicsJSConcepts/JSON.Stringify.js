@@ -55,7 +55,7 @@ function stringify(obj) {
   return objString;
 }
 
-let obj = { name: "Juan", age: 29, address: { street: "Street 1", number: 3 } };
+// let obj = { name: "Juan", age: 29, address: { street: "Street 1", number: 3 } };
 
 /* let obj = {"name":"Juan","age":30} */ /* console.info(JSON.stringify(obj)) */
 
