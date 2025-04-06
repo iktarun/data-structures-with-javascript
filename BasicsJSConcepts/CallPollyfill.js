@@ -20,6 +20,25 @@ Function.prototype.MyCallV2 = function () {
   //arguments[0].fn.apply(arguments[0], [].slice.call(arguments,1))
 };
 
+// Using Chat GPT
+Function.prototype.myCallV3 = function (context, ...args) {
+  if (typeof this !== "function") {
+    throw new TypeError("Not a function");
+  }
+  
+  context = context || globalThis; // Default to global object if null/undefined
+  const fnKey = Symbol(); // Unique property key
+  context[fnKey] = this;  // Assign function to object
+
+  const result = context[fnKey](...args); // Call function
+  delete context[fnKey]; // Clean up
+  return result;
+};
+
+// Usage
+greet.myCall(person, "Hi"); // Output: Hi, Alice
+
+
 function displayUser(state, country, method) {
   console.log("********" + method + "******");
   console.log("Name : ", this.name);

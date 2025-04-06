@@ -4,27 +4,27 @@ Detailed solutions and upcoming perks for all these questions are linked at the 
 
 1. Implement a chain calculator. ✅
 2. Execute promises in sequence. ✅
-3. Implement pipe and compose functions.
+3. Implement pipe and compose functions.✅
 4. Create custom array polyfills.
 5. Demonstrate prototype and prototype inheritance.✅
-6. Implement call, apply, and bind methods.
-7. Flatten a nested array.
-8. Implement basic debouncing.
-9. Implement basic throttling.
+6. Implement call, apply, and bind methods.✅
+7. Flatten a nested array.✅
+8. Implement basic debouncing.✅
+9. Implement basic throttling.✅
 10. Build an event emitter.✅
 11. Create a debouncing function with leading and trailing calls.
 12. Implement MapLimit functionality.
-13. Create a cancelable promise.
-14. Build a typeahead search using an LRU cache.
+13. Create a cancelable promise.✅
+14. Build a typeahead search using an LRU cache.✅
 15. Compare two documents for differences.
-16. Implement currying.
+16. Implement currying.✅
 17. Execute tasks in parallel. ✅
 18. Find the matching element in the DOM.
 19. Implement array sorting.✅
-20. Flatten a complex object.
+20. Flatten a complex object.✅
 21. Dispatch a custom event on array push.✅
-22. Perform a deep clone of an object.
-23. Serialize data using JSON.stringify.
+22. Perform a deep clone of an object.✅
+23. Serialize data using JSON.stringify.✅
 24. Explain React DOM rendering process.
 25. Retry a promise N times on failure.✅
 26. Extend the functionality of an event emitter.✅
@@ -105,3 +105,51 @@ Applied Through: Linkedin
 
 Before the 3rd Round
 They asked about my salary expectations but weren’t offering more than Amazon, so I decided not to move forward.
+
+# -----------------------------------------------------------------------------------------------------------------------#
+
+DP World Interview Experience ✌️
+Compensation Range: 53LPA + 7 varibale
+Position: SDE-2
+Application Method: via mail
+
+𝐏𝐡𝐨𝐧𝐞 𝐬𝐜𝐫𝐞𝐞𝐧𝐢𝐧𝐠 𝐫𝐨𝐮𝐧𝐝
+
+- React assessment
+
+𝟏𝐬𝐭 𝐑𝐨𝐮𝐧𝐝
+
+- Easy hashmap-based question
+- Polyfill for Promise.allSettled()
+- Discussion on hooks and their use cases
+- useLayoutEffect hook
+- Polyfill for useEffect in React( 𝐔𝐩𝐜𝐨𝐦𝐢𝐧𝐠: 𝐒𝐨𝐧𝐢'𝐬 𝐟𝐫𝐨𝐧𝐭𝐞𝐧𝐝 𝐝𝐨𝐜)
+
+𝟐𝐧𝐝 𝐑𝐨𝐮𝐧𝐝
+
+- Asked about project architecture
+- How to build a project from scratch, followed by a few follow-up questions
+  Implemented an interactive diagonal feature (Added to 𝐒𝐨𝐧𝐢'𝐬 𝐟𝐫𝐨𝐧𝐭𝐞𝐧𝐝 𝐝𝐨𝐜)
+
+𝟑𝐫𝐝 𝐑𝐨𝐮𝐧𝐝 (𝐌𝐚𝐧𝐚𝐠𝐞𝐫𝐢𝐚𝐥)
+
+- Basic leadership and behavioral questions
+- Detailed discussion on unit test cases with edge cases (They provided an environment to write unit tests)
+- Discussion on previous projects.
+
+# ----------------------------------------------------------------------------------------------------------------
+
+# Recently asked in Uber and Rippling
+
+This question is frequently asked in interviews for candidates with 2+ years of experience in product-based companies.
+
+Question:
+Build a progress bar that runs in parallel with a given limit.
+
+Follow-up Questions:
+
+- How will you make the limit dynamic?
+- What if there is a task dependency? (Topological Sort)
+- What if the progress bar needs to handle a stream of data?
+
+-https://www.linkedin.com/posts/shubham-soni-374a86175_connections-softwareengineer-linkedin-ugcPost-7310516091108081664-3GTr?utm_source=share&utm_medium=member_desktop&rcm=ACoAABDvUZ0BScq84zwgkvzCRb-oJQBFbZMtrxs

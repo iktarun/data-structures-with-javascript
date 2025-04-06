@@ -68,6 +68,24 @@ if (!Function.prototype.Mybind) {
   };
 }
 
+// Chat GPT solution
+Function.prototype.myBindV3 = function (context, ...args) {
+  if (typeof this !== "function") {
+    throw new TypeError("Not a function");
+  }
+
+  const fn = this;
+
+  return function (...newArgs) {
+    return fn.apply(context, [...args, ...newArgs]);
+  };
+};
+
+// Usage
+const sayHi = greet.myBind(person, "Hi");
+sayHi(); // Output: Hi, Alice
+
+
 function foo(something) {
   console.log(this.a, something);
   return this.a + something;

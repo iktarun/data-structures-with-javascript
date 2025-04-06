@@ -18,6 +18,25 @@ Function.prototype.MyApplyV2 = function () {
   //arguments[0].fn.apply(arguments[0], [].slice.call(arguments,1))
 };
 
+// Version3 using ChatGPT
+Function.prototype.myApplyV3 = function (context, args) {
+  if (typeof this !== "function") {
+    throw new TypeError("Not a function");
+  }
+
+  context = context || globalThis;
+  const fnKey = Symbol();
+  context[fnKey] = this;
+
+  const result = args ? context[fnKey](...args) : context[fnKey]();
+  delete context[fnKey];
+  return result;
+};
+
+// Usage
+greet.myApply(person, ["Hola"]); // Output: Hola, Alice
+
+
 function displayUser(state, country, method) {
   console.log("********" + method + "******");
   console.log("Name : ", this.name);
